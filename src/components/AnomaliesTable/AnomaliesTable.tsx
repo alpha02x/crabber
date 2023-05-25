@@ -14,10 +14,13 @@ type AnomaliesTableState = {
 };
 
 export class AnomaliesTable extends React.Component {
-	state: AnomaliesTableState = {
-		tableColumns: [],
-		chars: [],
-	};
+	state: AnomaliesTableState = JSON.parse(
+		localStorage.getItem("state") ??
+			JSON.stringify({
+				tableColumns: [],
+				chars: [],
+			})
+	);
 
 	removeColumn(columnName: string) {
 		this.setStateInternal({
@@ -28,6 +31,7 @@ export class AnomaliesTable extends React.Component {
 
 	setStateInternal(state: AnomaliesTableState) {
 		this.setState(state);
+		localStorage.setItem("state", JSON.stringify(this.state));
 	}
 
 	changeAddRat(columnName: string) {
