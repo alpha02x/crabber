@@ -39,7 +39,7 @@ export class AnomaliesTable extends React.Component {
 
 	setStateInternal(state: AnomaliesTableState) {
 		this.setState(state);
-		localStorage.setItem("state", JSON.stringify(state));
+		localStorage.removeItem("state");
 	}
 
 	changeAddRat(columnName: string) {
