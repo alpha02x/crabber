@@ -18,6 +18,6 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 	}
 
 	render(): React.ReactNode {
-		return <input className="charAdditionControl" placeholder="Введите имя персонажа" onKeyDown={this.onKeyDown.bind(this)} type="text"></input>;
+		return <input className="charAdditionControl" placeholder="Введи имя персонажа" onKeyDown={this.onKeyDown.bind(this)} type="text"></input>;
 	}
 }
