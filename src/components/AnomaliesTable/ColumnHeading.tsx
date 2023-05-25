@@ -14,7 +14,7 @@ export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 		return (
 			<div className="tableHeader">
 				<button className="deleteColumnButton" onClick={() => this.props.removeColumn(this.props.tableColumn.name)}>
-					X
+					×
 				</button>
 				{this.props.tableColumn.name}
 
