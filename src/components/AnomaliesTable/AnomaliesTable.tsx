@@ -154,9 +154,7 @@ export class AnomaliesTable extends React.Component {
 				<button className="resetButton" onDoubleClick={() => this.resetState()}>
 					Сброс
 				</button>
-				<div className="calculatorContainer">
-					<Calculator tableColumns={this.state.tableColumns} chars={this.state.chars} />
-				</div>
+				<Calculator tableColumns={this.state.tableColumns} chars={this.state.chars} />
 			</div>
 		);
 	}
