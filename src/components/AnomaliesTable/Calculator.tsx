@@ -9,17 +9,16 @@ export type CalculatorProps = {
 
 export class Calculator extends React.Component<CalculatorProps> {
 	calculateForChar(char: string, columns: TableColumn[]): string {
-		let income: number = 0;
-		income = columns
+		let income: number = columns
 			.filter((col) => col.charsPassed.some((x) => x === char))
-			.reduce((income, currentColumn) => income + this.getPrice(currentColumn) / currentColumn.charsPassed.length, income);
+			.reduce((income, currentColumn) => income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length, 0);
 		return income.toLocaleString("ru-RU", {
-			minimumFractionDigits: 2,
+			minimumFractionDigits: 0,
 			maximumFractionDigits: 2,
 		});
 	}
 
-	getPrice(column: TableColumn): number {
+	getColumnPrice(column: TableColumn): number {
 		let definition = AnomalyDefinitons.get(column.anomalyType);
 		let result: number = 0;
 
@@ -39,6 +38,17 @@ export class Calculator extends React.Component<CalculatorProps> {
 						<td>{this.calculateForChar(char, this.props.tableColumns) + " ISK"}</td>
 					</tr>
 				))}
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;Σ</td>
+					<td>
+						{this.props.tableColumns
+							.reduce((acc, curCol) => acc + this.getColumnPrice(curCol), 0)
+							.toLocaleString("ru-RU", {
+								minimumFractionDigits: 0,
+								maximumFractionDigits: 2,
+							}) + " ISK"}
+					</td>
+				</tr>
 			</table>
 		);
 	}

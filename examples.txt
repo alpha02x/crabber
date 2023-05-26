@@ -1,0 +1,72 @@
+eng:
+Sisters Combat Scanner Probe	8
+Sisters Core Scanner Probe	8
+ Infinite Celebrations Firework	200
+ Sisters Core Probe Launcher	1
+Inferno Fury Heavy Missile	35043
+Concussion Bomb	2
+Navy Cap Booster 800	14
+Standard Blue Pill Booster	1
+Reactive Armor Hardener	1
+Tetryon Exotic Plasma L	500
+Small F-S9 Regolith Compact Shield Extender	1
+SoCT Scan Booster II	1
+Compact Multispectrum Energized Membrane	2
+Small Shield Extender II	1
+ Infinite Celebrations Firework	200
+Scourge Rage Torpedo	80
+Type-D Restrained Inertial Stabilizers	3
+Light Armor Maintenance Bot I	4
+Relic Analyzer I	1
+Capsule Cascade Firework	300
+Type-D Restrained Inertial Stabilizers	
+Caldari Navy Scourge Rocket	45
+Initiated Compact Warp Disruptor	1
+Medium Shield Extender I	1
+Medium Solace Scoped Remote Armor Repairer	3
+Medium Radiative Scoped Remote Capacitor Transmitter	2
+F-90 Compact Sensor Booster	1
+Cargo Scanner I	
+Small I-a Enduring Armor Repairer	1
+SoCT Agility Booster I	1
+SoCT Scan Booster I	1
+SoCT Armor Booster I	1
+Eutectic Compact Cap Recharger	1
+Guri Malakim Observability Booster I	1
+Caldari Encryption Methods	1
+Civilian Miner	1
+
+ru:
+Sisters Core Probe Launcher*	1
+Inferno Fury Heavy Missile*	35043
+Concussion Bomb*	2
+Navy Cap Booster 800*	14
+Standard Blue Pill Booster*	1
+Reactive Armor Hardener*	1
+Tetryon Exotic Plasma L*	500
+Small F-S9 Regolith Compact Shield Extender*	1
+SoCT Scan Booster II*	1
+Compact Multispectrum Energized Membrane*	2
+Small Shield Extender II*	1
+ Infinite Celebrations Firework*	200
+Scourge Rage Torpedo*	80
+Type-D Restrained Inertial Stabilizers*	3
+Light Armor Maintenance Bot I*	4
+Relic Analyzer I*	1
+Capsule Cascade Firework*	300
+Type-D Restrained Inertial Stabilizers*	
+Caldari Navy Scourge Rocket*	45
+Initiated Compact Warp Disruptor*	1
+Medium Shield Extender I*	1
+Medium Solace Scoped Remote Armor Repairer*	3
+Medium Radiative Scoped Remote Capacitor Transmitter*	2
+F-90 Compact Sensor Booster*	1
+Cargo Scanner I*	
+Small I-a Enduring Armor Repairer*	1
+SoCT Agility Booster I*	1
+SoCT Scan Booster I*	1
+SoCT Armor Booster I*	1
+Eutectic Compact Cap Recharger*	1
+Guri Malakim Observability Booster I*	1
+Caldari Encryption Methods*	1
+Civilian Miner*	1
