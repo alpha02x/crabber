@@ -1,0 +1,49 @@
+.calculator {
+	padding-left: 10px;
+}
+
+.notEnoughCargoWarning {
+	color: red;
+	margin-left: 15px;
+	top: 50%;
+}
+
+.blueLootTable {
+	border-style: solid 1px;
+	border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.blueLootTableColumnHeading {
+	font-weight: lighter;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-top-width: 0px;
+	border-color: grey;
+	border-style: solid;
+}
+
+.calculatorFirstColumn {
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-color: grey;
+	border-style: solid;
+	padding-right: 10px;
+}
+
+.cargoInput {
+	min-width: 300px;
+	max-width: 300px;
+	min-height: 50px;
+	height: 50px;
+	margin-top: 15px;
+}
+
+.blueLootCount{
+    text-align: center;
+}

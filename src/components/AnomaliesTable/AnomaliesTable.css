@@ -46,10 +46,6 @@
 	text-decoration: underline dotted;
 }
 
-.calculator {
-	padding-left: 10px;
-}
-
 .deleteColumnButton {
 	margin-right: 5px;
 	border: none;
@@ -68,37 +64,4 @@
 .resetButton {
 	margin-top: 15px;
 	margin-bottom: 15px;
-}
-
-.calculatorFirstColumn {
-	border-left-width: 0px;
-	border-top-width: 0px;
-	border-bottom-width: 1px;
-	border-right-width: 1px;
-	border-color: grey;
-	border-style: solid;
-	padding-right: 10px;
-}
-
-.cargoInput {
-	min-width: 300px;
-	max-width: 300px;
-	min-height: 50px;
-	height: 50px;
-	margin-top: 15px;
-}
-
-.notEnoughCargoWarning {
-	color: red;
-	margin-left: 15px;
-	top: 50%;
-}
-
-.blueLootTable {
-	border-style: solid 1px;
-	border-collapse: collapse;
-}
-
-.blueLootTableHeaderRow{
-    font-weight: lighter;
 }
