@@ -110,7 +110,7 @@ export class AnomaliesTable extends React.Component {
 				<div className="tableDiv">
 					<table className="table">
 						<tr className="tableHeaderRow">
-							<th>Персы</th>
+							<th>Окно</th>
 							{this.state.tableColumns.map((column) => (
 								<th className="tableColumnHeaderAnomaly">
 									<ColumnHeading

@@ -1,6 +1,7 @@
 import React from "react";
 import { TableColumn } from "../../entities/TableColumn";
 import { AnomalyDefinitons } from "../../entities/Constants";
+import { BlueLootCalculator } from "./BlueLootCalculator";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];
@@ -8,14 +9,10 @@ export type CalculatorProps = {
 };
 
 export class Calculator extends React.Component<CalculatorProps> {
-	calculateForChar(char: string, columns: TableColumn[]): string {
-		let income: number = columns
+	calculateForChar(char: string, columns: TableColumn[]): number {
+		return columns
 			.filter((col) => col.charsPassed.some((x) => x === char))
 			.reduce((income, currentColumn) => income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length, 0);
-		return income.toLocaleString("ru-RU", {
-			minimumFractionDigits: 0,
-			maximumFractionDigits: 2,
-		});
 	}
 
 	getColumnPrice(column: TableColumn): number {
@@ -29,28 +26,38 @@ export class Calculator extends React.Component<CalculatorProps> {
 		return result;
 	}
 
+	getAllColumnsSum(): number {
+		return this.props.tableColumns.reduce((acc, currentColumn) => acc + this.getColumnPrice(currentColumn), 0);
+	}
+
 	render(): React.ReactNode {
+		let charsToIncomeMap: [string, number][] = this.props.chars.map((char) => [char, this.calculateForChar(char, this.props.tableColumns)]);
+
 		return (
 			<div className="calculatorContainer">
 				<table className="calculator">
-					{this.props.chars.map((char) => (
+					{charsToIncomeMap.map(([char, income]) => (
 						<tr>
 							<td className="calculatorFirstColumn">{char}</td>
-							<td>{this.calculateForChar(char, this.props.tableColumns) + " ISK"}</td>
+							<td>
+								{income.toLocaleString("ru-RU", {
+									minimumFractionDigits: 0,
+									maximumFractionDigits: 2,
+								}) + " ISK"}
+							</td>
 						</tr>
 					))}
 					<tr>
 						<td>&nbsp;&nbsp;&nbsp;Σ</td>
 						<td>
-							{this.props.tableColumns
-								.reduce((acc, curCol) => acc + this.getColumnPrice(curCol), 0)
-								.toLocaleString("ru-RU", {
-									minimumFractionDigits: 0,
-									maximumFractionDigits: 2,
-								}) + " ISK"}
+							{this.getAllColumnsSum().toLocaleString("ru-RU", {
+								minimumFractionDigits: 0,
+								maximumFractionDigits: 2,
+							}) + " ISK"}
 						</td>
 					</tr>
 				</table>
+				<BlueLootCalculator totalFarmedMoney={this.getAllColumnsSum()} charsToIncomeMap={new Map(charsToIncomeMap)} />
 			</div>
 		);
 	}

@@ -79,3 +79,26 @@
 	border-style: solid;
 	padding-right: 10px;
 }
+
+.cargoInput {
+	min-width: 300px;
+	max-width: 300px;
+	min-height: 50px;
+	height: 50px;
+	margin-top: 15px;
+}
+
+.notEnoughCargoWarning {
+	color: red;
+	margin-left: 15px;
+	top: 50%;
+}
+
+.blueLootTable {
+	border-style: solid 1px;
+	border-collapse: collapse;
+}
+
+.blueLootTableHeaderRow{
+    font-weight: lighter;
+}
