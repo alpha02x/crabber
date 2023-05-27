@@ -8,10 +8,10 @@
 }
 
 .notEnoughCargoWarning {
-	color: red;
+	color: #c4000d;
 }
 .enoughCargoWarning {
-	color: green;
+	color: #2a9902;
 }
 
 .blueLootTable {
