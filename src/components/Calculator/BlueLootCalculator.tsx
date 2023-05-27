@@ -28,14 +28,14 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 		Array.from(this.props.charsToIncomeMap).forEach(([char, income]) => {
 			let incomeToFulfill = income;
 			Array.from(BlueLootDefinitons.keys()).forEach((blueLootName) => {
-				let nexusesInBank: number = bank.get(blueLootName) ?? 0;
-				let nexusPrice: number = BlueLootDefinitons.get(blueLootName) ?? 0;
-				let givenNexuses = Math.floor(incomeToFulfill / nexusPrice);
-				let actuallyGivenNexuses = nexusesInBank >= givenNexuses ? givenNexuses : nexusesInBank;
+				let blueInBank: number = bank.get(blueLootName) ?? 0;
+				let bluePrice: number = BlueLootDefinitons.get(blueLootName) ?? 0;
+				let givenBlue = Math.floor(incomeToFulfill / bluePrice);
+				let actuallyGivenBlue = blueInBank >= givenBlue ? givenBlue : blueInBank;
 				let charLoot = result.get(char) ?? new Map();
-				charLoot.set(blueLootName, (charLoot.get(blueLootName) ?? 0) + actuallyGivenNexuses);
-				bank.set(blueLootName, (bank.get(blueLootName) ?? 0) - actuallyGivenNexuses);
-				incomeToFulfill -= actuallyGivenNexuses * nexusPrice;
+				charLoot.set(blueLootName, (charLoot.get(blueLootName) ?? 0) + actuallyGivenBlue);
+				bank.set(blueLootName, (bank.get(blueLootName) ?? 0) - actuallyGivenBlue);
+				incomeToFulfill -= actuallyGivenBlue * bluePrice;
 			});
 		});
 		return result;
