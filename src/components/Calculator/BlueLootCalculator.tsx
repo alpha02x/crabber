@@ -75,42 +75,46 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 		return (
 			<div className="blueLootCalculator">
 				<div>Карго:</div>
-				<textarea className="cargoInput" placeholder="Вставь карго сюда" onChange={this.onChange.bind(this)} />
-				{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
-					<span className="cargoWarning notEnoughCargoWarning">
-						<p>В карго недостаточно синьки для распределения</p>
-					</span>
-				) : (
-					<span className="cargoWarning enoughCargoWarning">
-						<p>В карго достаточно синьки для распределения</p>
-					</span>
-				)}
-				<table className="blueLootTable">
-					<tr className="blueLootTableHeaderRow">
-						<th>Окно&nbsp;&nbsp;&nbsp;</th>
-						{Array.from(BlueLootDefinitons.keys()).map((blueLootName) => (
-							<th className="blueLootTableColumnHeading">{blueLootName}</th>
-						))}
-						<th>&nbsp;&nbsp;&nbsp;Цена синьки</th>
-					</tr>
-					{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(([char, blueLoot]) => (
-						<tr className="tableCharRow">
-							<td className="calculatorFirstColumn">{char}</td>
-							{Array.from(blueLoot).map(([_, blueLootCount]) => (
-								<td className="blueLootCount">{blueLootCount}</td>
+				<textarea id="cargoInput" className="cargoInput" placeholder="Вставь карго сюда" onChange={this.onChange.bind(this)} />
+				{((document.getElementById("cargoInput") as HTMLInputElement)?.value ?? "") !== "" && (
+					<div>
+						{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
+							<span className="cargoWarning notEnoughCargoWarning">
+								<p>В карго недостаточно синьки для распределения</p>
+							</span>
+						) : (
+							<span className="cargoWarning enoughCargoWarning">
+								<p>В карго достаточно синьки для распределения</p>
+							</span>
+						)}
+						<table className="blueLootTable">
+							<tr className="blueLootTableHeaderRow">
+								<th>Окно&nbsp;&nbsp;&nbsp;</th>
+								{Array.from(BlueLootDefinitons.keys()).map((blueLootName) => (
+									<th className="blueLootTableColumnHeading">{blueLootName}</th>
+								))}
+								<th>&nbsp;&nbsp;&nbsp;Цена синьки</th>
+							</tr>
+							{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(([char, blueLoot]) => (
+								<tr className="tableCharRow">
+									<td className="calculatorFirstColumn">{char}</td>
+									{Array.from(blueLoot).map(([_, blueLootCount]) => (
+										<td className="blueLootCount">{blueLootCount}</td>
+									))}
+									<td>
+										&nbsp;
+										{Array.from(blueLoot)
+											.reduce((acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!, 0)
+											.toLocaleString("ru-RU", {
+												minimumFractionDigits: 0,
+												maximumFractionDigits: 2,
+											}) + " ISK"}
+									</td>
+								</tr>
 							))}
-							<td>
-								&nbsp;
-								{Array.from(blueLoot)
-									.reduce((acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!, 0)
-									.toLocaleString("ru-RU", {
-										minimumFractionDigits: 0,
-										maximumFractionDigits: 2,
-									}) + " ISK"}
-							</td>
-						</tr>
-					))}
-				</table>
+						</table>
+					</div>
+				)}
 			</div>
 		);
 	}
