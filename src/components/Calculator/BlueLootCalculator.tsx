@@ -58,7 +58,8 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 			.forEach((cargoItem) => {
 				let cargoItemWords = cargoItem.split(" ");
 				let key = cargoItemWords.filter((x) => Number.isNaN(Number(x))).join(" ");
-				let count: number = Number(cargoItemWords.at(-1)) ?? 0;
+				let parsedCount = Number(cargoItemWords.at(-1));
+				let count: number = Number.isNaN(parsedCount) ? 1 : parsedCount;
 
 				cargoContents.set(key, (cargoContents.get(key) ?? 0) + count);
 			});
