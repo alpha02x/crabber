@@ -2,7 +2,6 @@
     padding-left: 10px;
 }
 
-
 .notEnoughCargoWarning {
     color: #c4000d;
 }
@@ -53,4 +52,29 @@
 
 .blueLootCalculator {
     padding-top: 30px;
+}
+
+.coefficientContainer {
+    white-space: nowrap;
+}
+
+.calculatorTableRow {
+    white-space: nowrap;
+}
+
+.coefficientInputContainer {
+    display: inline;
+    float: right;
+    margin-left: 50px;
+    font-family: monospace;
+}
+
+.charNameLabel {
+    float: left;
+}
+
+.coefficientInput {
+    width: 25px;
+    border: none;
+    background-color: #f5f4f0;
 }

@@ -3,17 +3,34 @@ import { TableColumn } from "../../entities/TableColumn";
 import { AnomalyDefinitons } from "../../entities/Constants";
 import { BlueLootCalculator } from "./BlueLootCalculator";
 import "./Calculator.css";
+import { CalculatorCharName } from "./CalculatorCharName";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];
 	chars: string[];
 };
 
-export class Calculator extends React.Component<CalculatorProps> {
+export type CalculatorState = {
+	charsCoefficients: Map<string, number>;
+};
+
+export class Calculator extends React.Component<CalculatorProps, CalculatorState> {
+	state = { charsCoefficients: new Map() };
+
+	changeCoefficient(char: string, coefficient: number) {
+		let newState = this.state;
+		newState.charsCoefficients.set(char, coefficient);
+		this.setState(newState);
+	}
+
 	calculateForChar(char: string, columns: TableColumn[]): number {
-		return columns
-			.filter((col) => col.charsPassed.some((x) => x === char))
-			.reduce((income, currentColumn) => income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length, 0);
+		let personalCoefficient = this.state.charsCoefficients.get(char) ?? 1;
+
+		return (
+			columns
+				.filter((col) => col.charsPassed.some((x) => x === char))
+				.reduce((income, currentColumn) => income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length, 0) * personalCoefficient
+		);
 	}
 
 	getColumnPrice(column: TableColumn): number {
@@ -38,8 +55,10 @@ export class Calculator extends React.Component<CalculatorProps> {
 			<div className="calculatorContainer">
 				<table className="calculator">
 					{charsToIncomeMap.map(([char, income]) => (
-						<tr>
-							<td className="calculatorFirstColumn">{char}</td>
+						<tr className="calculatorTableRow">
+							<td className="calculatorFirstColumn">
+								<CalculatorCharName changeCoefficient={this.changeCoefficient.bind(this)} char={char} />
+							</td>
 							<td>
 								{income.toLocaleString("ru-RU", {
 									minimumFractionDigits: 0,
