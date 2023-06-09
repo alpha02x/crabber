@@ -1,4 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent } from "react";
+import Arrow from "./arrow.svg";
+import "./CharAdditionControl.css";
 
 type CharAdditionControlProps = {
 	addChar: (char: string) => void;
@@ -38,9 +40,7 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 					onKeyDown={this.onKeyDown.bind(this)}
 					type="text"
 				></input>
-				<button onClick={() => this.addNewChar(this.state.charName)} className="addCharButton">
-					▸
-				</button>
+				<img src={Arrow} alt="Ввод" onClick={() => this.addNewChar(this.state.charName)} className="addCharButton" />
 			</div>
 		);
 	}
