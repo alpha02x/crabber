@@ -3,7 +3,7 @@ import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox/AnomalyPassedChec
 import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
 import { AnomalyAdditionControl } from "./AnomalyAdditionControl/AnomalyAdditionControl";
 import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
-import { TableColumn } from "../../models/TableColumn";
+import TableColumn from "../../models/TableColumn";
 import "./AnomaliesTable.css";
 import { Calculator } from "../Calculator/Calculator";
 import { ColumnHeading } from "./ColumnHeading";
