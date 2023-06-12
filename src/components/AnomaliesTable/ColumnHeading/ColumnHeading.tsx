@@ -1,6 +1,7 @@
 import React from "react";
-import TableColumn from "../../models/TableColumn";
-import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
+import TableColumn from "../../../models/TableColumn";
+import AnomalyDefinitons from "../../../definitions/AnomalyDefinitons";
+import "./ColumnHeading.css";
 
 export type ColumnHeadingProps = {
 	tableColumn: TableColumn;

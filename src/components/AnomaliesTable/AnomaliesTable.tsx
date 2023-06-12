@@ -6,7 +6,7 @@ import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
 import TableColumn from "../../models/TableColumn";
 import "./AnomaliesTable.css";
 import { Calculator } from "../Calculator/Calculator";
-import { ColumnHeading } from "./ColumnHeading";
+import { ColumnHeading } from "./ColumnHeading/ColumnHeading";
 import { CharName } from "./CharName/CharName";
 
 type AnomaliesTableState = {
