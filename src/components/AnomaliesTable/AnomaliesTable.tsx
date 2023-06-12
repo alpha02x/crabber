@@ -87,7 +87,10 @@ export class AnomaliesTable extends React.Component {
 		let newState: AnomaliesTableState = {
 			chars: this.state.chars.filter((x) => x !== char),
 			tableColumns: this.state.tableColumns.map((column) => {
-				let newColumn: TableColumn = { ...column, charsPassed: column.charsPassed.filter((passed) => passed !== char) };
+				let newColumn: TableColumn = {
+					...column,
+					charsPassed: column.charsPassed.filter((passed) => passed !== char),
+				};
 				return newColumn;
 			}),
 		};
@@ -106,13 +109,13 @@ export class AnomaliesTable extends React.Component {
 
 	render() {
 		return (
-			<div className="tableContainer">
-				<div className="tableDiv">
-					<table className="table">
-						<tr className="tableHeaderRow">
+			<div className='tableContainer'>
+				<div className='tableDiv'>
+					<table className='table'>
+						<tr className='tableHeaderRow'>
 							<th>Окно</th>
 							{this.state.tableColumns.map((column) => (
-								<th className="tableColumnHeaderAnomaly">
+								<th className='tableColumnHeaderAnomaly'>
 									<ColumnHeading
 										removeColumn={this.removeColumn.bind(this)}
 										changeAddRat={this.changeAddRat.bind(this)}
@@ -122,15 +125,18 @@ export class AnomaliesTable extends React.Component {
 								</th>
 							))}
 							<th>
-								<span className="anomalyAdditionControlContainer">
+								<span className='anomalyAdditionControlContainer'>
 									<AnomalyAdditionControl addAnomaly={this.addAnomaly.bind(this)} />
 								</span>
 							</th>
 						</tr>
 						{this.state.chars.map((char) => (
-							<tr className="tableCharRow">
+							<tr className='tableCharRow'>
 								<td>
-									<CharName removeCharFromTable={this.removeChar.bind(this)} charName={char} />
+									<CharName
+										removeCharFromTable={this.removeChar.bind(this)}
+										charName={char}
+									/>
 								</td>
 								{this.state.tableColumns.map((column) => (
 									<td>
@@ -145,16 +151,22 @@ export class AnomaliesTable extends React.Component {
 							</tr>
 						))}
 						<tr>
-							<div className="charAdditionControlContainer">
+							<div className='charAdditionControlContainer'>
 								<CharAdditionControl addChar={this.addChar.bind(this)} />
 							</div>
 						</tr>
 					</table>
 				</div>
-				<button className="resetButton" onDoubleClick={() => this.resetState()}>
+				<button
+					className='resetButton'
+					onDoubleClick={() => this.resetState()}
+				>
 					Сброс
 				</button>
-				<Calculator tableColumns={this.state.tableColumns} chars={this.state.chars} />
+				<Calculator
+					tableColumns={this.state.tableColumns}
+					chars={this.state.chars}
+				/>
 			</div>
 		);
 	}

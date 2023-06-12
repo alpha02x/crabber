@@ -30,17 +30,22 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 
 	render(): React.ReactNode {
 		return (
-			<div className="charAdditionControl">
+			<div className='charAdditionControl'>
 				{" "}
 				<input
-					id="charAdditionControl"
-					className="charAdditionControl"
-					placeholder="Введи имя персонажа"
+					id='charAdditionControl'
+					className='charAdditionControl'
+					placeholder='Введи имя персонажа'
 					onChange={this.onChange.bind(this)}
 					onKeyDown={this.onKeyDown.bind(this)}
-					type="text"
+					type='text'
 				></input>
-				<img src={Arrow} alt="Ввод" onClick={() => this.addNewChar(this.state.charName)} className="addCharButton" />
+				<img
+					src={Arrow}
+					alt='Ввод'
+					onClick={() => this.addNewChar(this.state.charName)}
+					className='addCharButton'
+				/>
 			</div>
 		);
 	}

@@ -24,7 +24,9 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 
 	calculateBlueLootDistribution(bankState: BlueLoot): Map<string, BlueLoot> {
 		let bank: BlueLoot = new Map(bankState);
-		let result: Map<string, BlueLoot> = new Map(Array.from(this.props.charsToIncomeMap.keys()).map((char) => [char, new Map()]));
+		let result: Map<string, BlueLoot> = new Map(
+			Array.from(this.props.charsToIncomeMap.keys()).map((char) => [char, new Map()])
+		);
 		Array.from(this.props.charsToIncomeMap).forEach(([char, income]) => {
 			let incomeToFulfill = income;
 			Array.from(BlueLootDefinitons.keys()).forEach((blueLootName) => {
@@ -68,50 +70,64 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 	}
 
 	getCargoPrice(cargoContents: Map<string, number>): number {
-		return Array.from(cargoContents).reduce((acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!, 0);
+		return Array.from(cargoContents).reduce(
+			(acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!,
+			0
+		);
 	}
 
 	render(): React.ReactNode {
 		return (
-			<div className="blueLootCalculator">
+			<div className='blueLootCalculator'>
 				<div>Карго:</div>
-				<textarea id="cargoInput" className="cargoInput" placeholder="Вставь карго сюда" onChange={this.onChange.bind(this)} />
+				<textarea
+					id='cargoInput'
+					className='cargoInput'
+					placeholder='Вставь карго сюда'
+					onChange={this.onChange.bind(this)}
+				/>
 				{((document.getElementById("cargoInput") as HTMLInputElement)?.value ?? "") !== "" && (
 					<div>
 						{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
-							<span className="cargoWarning notEnoughCargoWarning">
+							<span className='cargoWarning notEnoughCargoWarning'>
 								<p>В карго недостаточно синьки для распределения</p>
 							</span>
 						) : (
-							<span className="cargoWarning enoughCargoWarning">
+							<span className='cargoWarning enoughCargoWarning'>
 								<p>В карго достаточно синьки для распределения</p>
 							</span>
 						)}
-						<table className="blueLootTable">
-							<tr className="blueLootTableHeaderRow">
+						<table className='blueLootTable'>
+							<tr className='blueLootTableHeaderRow'>
 								<th>Окно&nbsp;&nbsp;&nbsp;</th>
 								{Array.from(BlueLootDefinitons.keys()).map((blueLootName) => (
-									<th className="blueLootTableColumnHeading">{blueLootName}</th>
+									<th className='blueLootTableColumnHeading'>{blueLootName}</th>
 								))}
 								<th>&nbsp;&nbsp;&nbsp;Цена синьки</th>
 							</tr>
-							{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(([char, blueLoot]) => (
-								<tr className="tableCharRow">
-									<td className="calculatorFirstColumn">{char}</td>
-									{Array.from(blueLoot).map(([_, blueLootCount]) => (
-										<td className="blueLootCount">{blueLootCount}</td>
-									))}
-									<td>
-										&nbsp;
-										{Array.from(blueLoot)
-											.reduce((acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!, 0)
-											.toLocaleString("ru-RU", {
-												minimumFractionDigits: 0,
-												maximumFractionDigits: 2,
-											}) + " ISK"}
-									</td>
-								</tr>
-							))}
+							{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(
+								([char, blueLoot]) => (
+									<tr className='tableCharRow'>
+										<td className='calculatorFirstColumn'>{char}</td>
+										{Array.from(blueLoot).map(([_, blueLootCount]) => (
+											<td className='blueLootCount'>{blueLootCount}</td>
+										))}
+										<td>
+											&nbsp;
+											{Array.from(blueLoot)
+												.reduce(
+													(acc, [blueLootName, blueLootCount]) =>
+														acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!,
+													0
+												)
+												.toLocaleString("ru-RU", {
+													minimumFractionDigits: 0,
+													maximumFractionDigits: 2,
+												}) + " ISK"}
+										</td>
+									</tr>
+								)
+							)}
 						</table>
 					</div>
 				)}
