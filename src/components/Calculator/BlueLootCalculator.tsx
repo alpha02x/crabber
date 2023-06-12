@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
-import { BlueLootDefinitons } from "../../definitions/Definitions";
+import BlueLootDefinitons from "../../definitions/BlueLootDefinitons";
 
-export type BlueLoot = Map<string, number>;
+type BlueLoot = Map<string, number>;
 
 export type BlueLootCalculatorProps = {
 	charsToIncomeMap: Map<string, number>;
