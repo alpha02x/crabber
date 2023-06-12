@@ -1,4 +1,4 @@
-type AnomalyMeta = {
+type AnomalyDefinition = {
 	name: string;
 	short: string;
 	basePrice: number;
@@ -7,7 +7,7 @@ type AnomalyMeta = {
 	hasDrifter: boolean;
 };
 
-export const AnomalyDefinitons: Map<string, AnomalyMeta> = new Map([
+export const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 	["5CG", { name: "C5 Core Garrison", short: ".CG-", basePrice: 253400000, priceWithAdditionalShips: 253400000, hasAdditionalRats: false, hasDrifter: true }],
 	["5CS", { name: "C5 Core Stronghold", short: ".ST-", basePrice: 234900000, priceWithAdditionalShips: 234900000, hasAdditionalRats: false, hasDrifter: true }],
 	["5OO", { name: "C5 Oruze Osobnyk", short: ".OO-", basePrice: 148800000, priceWithAdditionalShips: 164700000, hasAdditionalRats: true, hasDrifter: true }],
@@ -21,7 +21,6 @@ export const AnomalyDefinitons: Map<string, AnomalyMeta> = new Map([
 	["3OC", { name: "C3 The Oruze Construct", short: "3OC-", basePrice: 41600000, priceWithAdditionalShips: 44500000, hasAdditionalRats: true, hasDrifter: false }],
 ]);
 
-// цены синьки
 export const BlueLootDefinitons: Map<string, number> = new Map([
 	["Sleeper Drone AI Nexus", 5000000],
 	["Ancient Coordinates Database", 1500000],
