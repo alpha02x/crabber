@@ -3,7 +3,7 @@ import TableColumn from "../../models/TableColumn";
 import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
 import { BlueLootCalculator } from "./BlueLootCalculator";
 import "./Calculator.css";
-import { CalculatorCharName } from "./CalculatorCharName";
+import { CalculatorCharName } from "./CalculatorCharName/CalculatorCharName";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];
