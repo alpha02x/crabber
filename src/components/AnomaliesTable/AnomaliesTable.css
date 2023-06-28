@@ -9,6 +9,10 @@
 	margin-top: 15px;
 }
 
+.tableDiv {
+	overflow: auto;
+}
+
 .tableColumnHeaderAnomaly {
 	padding: 5px;
 }
