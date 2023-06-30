@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import AnomalyDefinitons from "../../../definitions/AnomalyDefinitons";
+import AnomalyDefinitons, { Blocks } from "../../../definitions/AnomalyDefinitons";
 import "./AnomalyAdditionControl.css";
 
 type AnomalyAdditionControlProps = {
@@ -26,9 +26,30 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 				>
 					+
 				</option>
-				{Array.from(AnomalyDefinitons.keys()).map((anom) => (
-					<option value={anom}>{AnomalyDefinitons.get(anom)?.name}</option>
-				))}
+
+				{Blocks.map((block) => {
+					let options: JSX.Element[] = [];
+					options.push(
+						<option
+							value='none'
+							disabled
+						>
+							{block.text}
+						</option>
+					);
+					Array.from(AnomalyDefinitons.keys())
+						.filter((anom) => AnomalyDefinitons.get(anom)?.block === block.text)
+						.map((anom) => (
+							<option
+								style={{ backgroundColor: block.color ?? "white" }}
+								value={anom}
+							>
+								{AnomalyDefinitons.get(anom)?.name}
+							</option>
+						))
+						.forEach((option) => options.push(option));
+					return options;
+				})}
 			</select>
 		);
 	}
