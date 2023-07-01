@@ -1,0 +1,11 @@
+.resetButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.resetButtonTooltip {
+	margin-left: 10px;
+	user-select: none;
+	color: gray;
+	font-size: small;
+}
