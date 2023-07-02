@@ -15,7 +15,11 @@ type AnomaliesTableState = {
 	chars: string[];
 };
 
-export class AnomaliesTable extends React.Component {
+type AnomaliesTableProps = {
+	darkTheme: boolean;
+};
+
+export class AnomaliesTable extends React.Component<AnomaliesTableProps, AnomaliesTableState> {
 	state: AnomaliesTableState = JSON.parse(
 		localStorage.getItem("state") ??
 			JSON.stringify({
@@ -110,7 +114,7 @@ export class AnomaliesTable extends React.Component {
 
 	render() {
 		return (
-			<div className='tableContainer'>
+			<div className={"tableContainer " + (this.props.darkTheme ? "dark-theme" : "light-theme")}>
 				<div className='tableDiv'>
 					<table className='table'>
 						<tr className='tableHeaderRow'>
