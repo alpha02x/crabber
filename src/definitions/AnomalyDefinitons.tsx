@@ -15,6 +15,8 @@ type Block = {
 
 export const Blocks: Block[] = [
 	{ text: "C5", color: "#e9fae6" },
+	{ text: "C5 Data", color: "#faedf0" },
+	{ text: "C5 Relic", color: "#edfafa" },
 	{ text: "C3", color: "#faedf4" },
 	{ text: "C3 Data", color: "#f5faed" },
 	{ text: "C3 Relic", color: "#faf4ed" },
@@ -247,6 +249,54 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 			block: "C6",
 			basePrice: 363200000,
 			priceWithAdditionalShips: 363200000,
+			hasAdditionalRats: false,
+			hasDrifter: false,
+		},
+	],
+	[
+		"5R-FCDF",
+		{
+			name: "Forgotten Core Data Field",
+			short: "5R-FCDF-",
+			block: "C5 Relic",
+			basePrice: 276200000,
+			priceWithAdditionalShips: 276200000,
+			hasAdditionalRats: false,
+			hasDrifter: false,
+		},
+	],
+	[
+		"5R-FCIP",
+		{
+			name: "Forgotten Core Information Pen",
+			short: "5R-FCIP-",
+			block: "C5 Relic",
+			basePrice: 332900000,
+			priceWithAdditionalShips: 348800000,
+			hasAdditionalRats: true,
+			hasDrifter: false,
+		},
+	],
+	[
+		"5D-UFER",
+		{
+			name: "Unsecured Frontier Enclave Relay",
+			short: "5D-UFER-",
+			block: "C5 Data",
+			basePrice: 314000000,
+			priceWithAdditionalShips: 314000000,
+			hasAdditionalRats: false,
+			hasDrifter: false,
+		},
+	],
+	[
+		"5D-UFSB",
+		{
+			name: "Unsecured Frontier Server Bank",
+			short: "5D-UFSB-",
+			block: "C5 Data",
+			basePrice: 272100000,
+			priceWithAdditionalShips: 272100000,
 			hasAdditionalRats: false,
 			hasDrifter: false,
 		},
