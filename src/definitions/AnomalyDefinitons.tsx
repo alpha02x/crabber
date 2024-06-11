@@ -238,7 +238,7 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 			basePrice: 291800000,
 			priceWithAdditionalShips: 291800000,
 			hasAdditionalRats: false,
-			hasDrifter: false,
+			hasDrifter: true,
 		},
 	],
 	[
