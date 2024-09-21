@@ -8,6 +8,7 @@ import "./AnomaliesTable.css";
 import { Calculator } from "../Calculator/Calculator";
 import { ColumnHeading } from "./ColumnHeading/ColumnHeading";
 import { CharName } from "./CharName/CharName";
+import ResetButton from "./ResetButton/ResetButton";
 
 type AnomaliesTableState = {
 	tableColumns: TableColumn[];
@@ -155,12 +156,7 @@ export class AnomaliesTable extends React.Component {
 						</tr>
 					</table>
 				</div>
-				<button
-					className='resetButton'
-					onDoubleClick={() => this.resetState()}
-				>
-					Сброс
-				</button>
+				<ResetButton resetState={this.resetState.bind(this)} />
 				<Calculator
 					tableColumns={this.state.tableColumns}
 					chars={this.state.chars}
