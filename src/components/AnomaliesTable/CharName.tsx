@@ -10,7 +10,7 @@ export class CharName extends React.Component<CharNameProps> {
 		return (
 			<div className="charName">
 				<button className="deleteCharButton" onClick={() => this.props.removeChar(this.props.charName)}>
-					X
+					×
 				</button>
 				{this.props.charName}
 			</div>
