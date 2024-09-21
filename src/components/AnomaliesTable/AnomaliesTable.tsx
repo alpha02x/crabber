@@ -1,6 +1,6 @@
 import React from "react";
-import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox";
-import { CharAdditionControl } from "./CharAdditionControl";
+import { AnomalyPassedCheckBox } from "./CharAdditionControl/AnomalyPassedCheckBox";
+import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
 import { AnomalyAdditionControl } from "./AnomalyAdditionControl";
 import { AnomalyDefinitons } from "../../entities/Constants";
 import { TableColumn } from "../../entities/TableColumn";

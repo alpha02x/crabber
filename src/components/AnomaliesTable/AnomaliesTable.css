@@ -67,17 +67,6 @@
     float: right;
 }
 
-.charAdditionControl {
-    white-space: nowrap;
-}
-
-.addCharButton {
-    margin-top: 4px;
-    color: green;
-    display: inline;
-    border-style: groove;
-}
-
 .resetButton {
     margin-top: 15px;
     margin-bottom: 15px;
