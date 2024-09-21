@@ -47,7 +47,10 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 		let blueLootNames = Array.from(BlueLootDefinitons.keys());
 		input
 			.replace("*", "")
-			.replace(/\t\0\v\f/g, " ")
+			.replace(/\t/g, " ")
+			.replace(/\0/g, " ")
+			.replace(/\v/g, " ")
+			.replace(/\f/g, " ")
 			.split(/\r?\n/)
 			.map((str) => str.trim())
 			.filter((str) => str !== "")
