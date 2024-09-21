@@ -57,7 +57,7 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 					{charsToIncomeMap.map(([char, income]) => (
 						<tr className="calculatorTableRow">
 							<td className="calculatorFirstColumn">
-								<CalculatorCharName changeCoefficient={this.changeCoefficient.bind(this)} char={char} />
+								<CalculatorCharName changeCoefficient={this.changeCoefficient.bind(this)} char={[char, this.state.charsCoefficients.get(char) ?? 1]} />
 							</td>
 							<td>
 								{income.toLocaleString("ru-RU", {
