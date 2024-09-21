@@ -1,6 +1,8 @@
 import React, { ChangeEvent } from "react";
 import { BlueLootDefinitons } from "../../entities/Constants";
 
+export type BlueLoot = Map<string, number>;
+
 export type BlueLootCalculatorProps = {
 	charsToIncomeMap: Map<string, number>;
 	totalFarmedMoney: number;
@@ -9,8 +11,6 @@ export type BlueLootCalculatorProps = {
 export type BlueLootCalculatorState = {
 	cargoContents: BlueLoot;
 };
-
-type BlueLoot = Map<string, number>;
 
 export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps, BlueLootCalculatorState> {
 	state = {
