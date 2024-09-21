@@ -22,6 +22,13 @@ export class AnomaliesTable extends React.Component {
 			})
 	);
 
+	resetState() {
+		this.setStateInternal({
+			tableColumns: [],
+			chars: [],
+		});
+	}
+
 	removeColumn(columnName: string) {
 		this.setStateInternal({
 			chars: this.state.chars,
@@ -128,6 +135,7 @@ export class AnomaliesTable extends React.Component {
 						</tr>
 					</table>
 				</div>
+				<button className="resetButton" onDoubleClick={() => this.resetState()}>Сброс</button>
 				<div className="calculatorContainer">
 					<Calculator tableColumns={this.state.tableColumns} chars={this.state.chars} />
 				</div>

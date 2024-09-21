@@ -4,7 +4,6 @@
 }
 
 .table {
-	float: left;
 	border-style: solid 1px;
 	border-collapse: collapse;
 }
@@ -37,7 +36,6 @@
 
 .charAdditionControl {
 	border: 0px;
-	/* display: flex; */
 	min-width: 150px;
 }
 
@@ -57,4 +55,19 @@
 	border: none;
 	background: none;
 	color: red;
+}
+
+.resetButton{
+    margin-top:15px;
+    margin-bottom:15px;
+} 
+
+.calculatorFirstColumn{
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-color: grey;
+    border-style: solid;
+    padding-right: 10px;
 }
