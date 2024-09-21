@@ -20,3 +20,10 @@ export const AnomalyDefinitons: Map<string, AnomalyMeta> = new Map([
 	["3SC", { name: "C3 Solar Cell", short: "3SC-", basePrice: 47300000, priceWithAdditionalShips: 52300000, hasAdditionalRats: true, hasDrifter: false }],
 	["3OC", { name: "C3 The Oruze Construct", short: "3OC-", basePrice: 41600000, priceWithAdditionalShips: 44500000, hasAdditionalRats: true, hasDrifter: false }],
 ]);
+
+export const BlueLootDefinitons: Map<string, number> = new Map([
+	["Sleeper Drone AI Nexus", 5000000],
+	["Ancient Coordinates Database", 1500000],
+	["Sleeper Data Library", 500000],
+	["Neural Network Analyzer", 200000],
+]);
