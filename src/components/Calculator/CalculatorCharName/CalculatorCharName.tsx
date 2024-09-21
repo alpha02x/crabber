@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
 import BigNumber from "bignumber.js";
+import "./CalculatorCharName.css";
 
 export type CalculatorCharNameProps = {
 	char: [name: string, coef: number];

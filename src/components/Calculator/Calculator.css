@@ -54,28 +54,6 @@
 	padding-top: 30px;
 }
 
-.coefficientContainer {
-	white-space: nowrap;
-}
-
 .calculatorTableRow {
 	white-space: nowrap;
-}
-
-.coefficientInputContainer {
-	display: inline;
-	float: right;
-	margin-left: 50px;
-	font-family: monospace;
-	user-select: none;
-}
-
-.charNameLabel {
-	float: left;
-}
-
-.coefficientInput {
-	width: 25px;
-	border: none;
-	background-color: #f5f4f0;
 }

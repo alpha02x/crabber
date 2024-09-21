@@ -1,0 +1,21 @@
+.coefficientContainer {
+	white-space: nowrap;
+}
+
+.coefficientInputContainer {
+	display: inline;
+	float: right;
+	margin-left: 50px;
+	font-family: monospace;
+	user-select: none;
+}
+
+.coefficientInput {
+	width: 25px;
+	border: none;
+	background-color: #f5f4f0;
+}
+
+.charNameLabel {
+	float: left;
+}
