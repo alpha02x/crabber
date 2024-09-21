@@ -38,6 +38,7 @@
     border: 0px;
     min-width: 150px;
     background-color: #f5f4f0;
+    display: inline;
 }
 
 .checkboxExplanation {
@@ -60,6 +61,17 @@
     background: none;
     color: red;
     float: right;
+}
+
+.charAdditionControl {
+    white-space: nowrap;
+}
+
+.addCharButton {
+    margin-top: 4px;
+    color: green;
+    display: inline;
+    border-style: groove;
 }
 
 .resetButton {
