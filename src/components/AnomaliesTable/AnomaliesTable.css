@@ -1,0 +1,36 @@
+.anomalyAdditionControl {
+	margin-left: 5px;
+	width: 40px;
+}
+
+.table {
+	float: left;
+	border-style: solid 1px;
+	border-collapse: collapse;
+}
+
+.tableContainer {
+	margin: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.tableColumnHeaderAnomaly {
+	padding: 5px;
+}
+
+.tableCharRow {
+	border-bottom: 1px;
+	border-top: 1px;
+	border-right: 0px;
+	border-left: 0px;
+	border-color: grey;
+	border-style: solid;
+	border-collapse: collapse;
+}
+
+.charAdditionControl {
+	border: 0px;
+	display: flex;
+	min-width: 150px;
+}
