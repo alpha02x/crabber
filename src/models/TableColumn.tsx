@@ -1,4 +1,4 @@
-export class TableColumn {
+export default class TableColumn {
 	name: string;
 	anomalyType: string;
 	charsPassed: string[];
