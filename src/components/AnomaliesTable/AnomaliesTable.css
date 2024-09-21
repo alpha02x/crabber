@@ -57,17 +57,25 @@
 	color: red;
 }
 
-.resetButton{
-    margin-top:15px;
-    margin-bottom:15px;
-} 
+.deleteCharButton {
+	margin-right: 5px;
+	border: none;
+	background: none;
+	color: red;
+	float: right;
+}
 
-.calculatorFirstColumn{
-    border-left-width: 0px;
-    border-top-width: 0px;
-    border-bottom-width: 1px;
-    border-right-width: 1px;
-    border-color: grey;
-    border-style: solid;
-    padding-right: 10px;
+.resetButton {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.calculatorFirstColumn {
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-color: grey;
+	border-style: solid;
+	padding-right: 10px;
 }

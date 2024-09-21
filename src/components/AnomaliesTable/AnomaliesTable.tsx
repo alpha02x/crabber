@@ -7,6 +7,7 @@ import { TableColumn } from "../../entities/TableColumn";
 import "./AnomaliesTable.css";
 import { Calculator } from "./Calculator";
 import { ColumnHeading } from "./ColumnHeading";
+import { CharName } from "./CharName";
 
 type AnomaliesTableState = {
 	tableColumns: TableColumn[];
@@ -81,6 +82,17 @@ export class AnomaliesTable extends React.Component {
 		}
 	}
 
+	removeChar(char: string) {
+		let newState: AnomaliesTableState = {
+			chars: this.state.chars.filter((x) => x !== char),
+			tableColumns: this.state.tableColumns.map((column) => {
+				let newColumn: TableColumn = { ...column, charsPassed: column.charsPassed.filter((passed) => passed !== char) };
+				return newColumn;
+			}),
+		};
+		this.setStateInternal(newState);
+	}
+
 	addAnomaly(type: string) {
 		let newState = this.state;
 		let anomalyDefinition = AnomalyDefinitons.get(type);
@@ -115,7 +127,9 @@ export class AnomaliesTable extends React.Component {
 						</tr>
 						{this.state.chars.map((char) => (
 							<tr className="tableCharRow">
-								<td>{char}</td>
+								<td>
+									<CharName removeChar={this.removeChar.bind(this)} charName={char} />
+								</td>
 								{this.state.tableColumns.map((column) => (
 									<td>
 										<AnomalyPassedCheckBox
@@ -135,7 +149,9 @@ export class AnomaliesTable extends React.Component {
 						</tr>
 					</table>
 				</div>
-				<button className="resetButton" onDoubleClick={() => this.resetState()}>Сброс</button>
+				<button className="resetButton" onDoubleClick={() => this.resetState()}>
+					Сброс
+				</button>
 				<div className="calculatorContainer">
 					<Calculator tableColumns={this.state.tableColumns} chars={this.state.chars} />
 				</div>
