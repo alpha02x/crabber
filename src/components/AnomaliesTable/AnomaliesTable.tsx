@@ -7,7 +7,7 @@ import { TableColumn } from "../../models/TableColumn";
 import "./AnomaliesTable.css";
 import { Calculator } from "../Calculator/Calculator";
 import { ColumnHeading } from "./ColumnHeading";
-import { CharName } from "./CharName";
+import { CharName } from "./CharName/CharName";
 
 type AnomaliesTableState = {
 	tableColumns: TableColumn[];
@@ -130,7 +130,7 @@ export class AnomaliesTable extends React.Component {
 						{this.state.chars.map((char) => (
 							<tr className="tableCharRow">
 								<td>
-									<CharName removeChar={this.removeChar.bind(this)} charName={char} />
+									<CharName removeCharFromTable={this.removeChar.bind(this)} charName={char} />
 								</td>
 								{this.state.tableColumns.map((column) => (
 									<td>
