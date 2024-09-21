@@ -1,5 +1,5 @@
 import React from "react";
-import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox";
+import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox/AnomalyPassedCheckBox";
 import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
 import { AnomalyAdditionControl } from "./AnomalyAdditionControl/AnomalyAdditionControl";
 import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
@@ -142,9 +142,9 @@ export class AnomaliesTable extends React.Component {
 									<td>
 										<AnomalyPassedCheckBox
 											checked={column.charsPassed.some((passed) => passed === char)}
-											anomaliesTable={this}
 											char={char}
 											anomalyName={column.name}
+											setCharStatusForAnomaly={this.setCharStatusForAnomaly.bind(this)}
 										/>
 									</td>
 								))}

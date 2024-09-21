@@ -1,17 +1,16 @@
 import React, { ChangeEvent } from "react";
-import { AnomaliesTable } from "./AnomaliesTable";
 
 type AnomaliesTableProps = {
 	char: string;
 	anomalyName: string;
-	anomaliesTable: AnomaliesTable;
 	checked: boolean;
+	setCharStatusForAnomaly: (charName: string, anomalyName: string, passed: boolean) => void;
 };
 
 export class AnomalyPassedCheckBox extends React.Component<AnomaliesTableProps> {
 	handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
-		let newValue = event.target.checked;
-		this.props.anomaliesTable.setCharStatusForAnomaly(this.props.char, this.props.anomalyName, newValue);
+		let newValue: boolean = event.target.checked;
+		this.props.setCharStatusForAnomaly(this.props.char, this.props.anomalyName, newValue);
 	};
 
 	render() {
