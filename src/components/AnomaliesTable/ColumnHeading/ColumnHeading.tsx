@@ -21,7 +21,9 @@ export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 					>
 						×
 					</button>
-					<span>{this.props.tableColumn.name}</span>
+					<span title={AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.name ?? ""}>
+						{this.props.tableColumn.name}
+					</span>
 				</div>
 
 				{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasAdditionalRats && (
