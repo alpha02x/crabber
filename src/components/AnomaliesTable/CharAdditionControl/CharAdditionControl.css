@@ -1,14 +1,14 @@
 .charAdditionControl {
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 .addCharButton {
-    margin-top: 6px;
-    margin-left: 3px;
-    margin-right: 4px;
-    display: inline-block;
-    cursor: pointer;
-    width: 13px;
-    height: 13px;
-    transform: scale(1.1);
+	margin-top: 6px;
+	margin-left: 3px;
+	margin-right: 4px;
+	display: inline-block;
+	cursor: pointer;
+	width: 13px;
+	height: 13px;
+	transform: scale(1.1);
 }
