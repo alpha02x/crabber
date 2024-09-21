@@ -10,6 +10,9 @@
 	background: none;
 	color: red;
 }
+.dark-theme .deleteColumnButton {
+	color: #e96164;
+}
 
 .checkboxExplanation {
 	font-weight: normal;
