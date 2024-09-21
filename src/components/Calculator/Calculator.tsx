@@ -1,6 +1,6 @@
 import React from "react";
 import { TableColumn } from "../../models/TableColumn";
-import { AnomalyDefinitons } from "../../definitions/Definitions";
+import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
 import { BlueLootCalculator } from "./BlueLootCalculator";
 import "./Calculator.css";
 import { CalculatorCharName } from "./CalculatorCharName";
