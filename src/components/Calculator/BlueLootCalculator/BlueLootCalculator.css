@@ -10,6 +10,10 @@
 	margin-top: 3px;
 }
 
+.blueLootDiv {
+	animation: fadein 200ms;
+}
+
 .notEnoughCargoWarning {
 	color: #c4000d;
 }
@@ -38,4 +42,24 @@
 
 .blueLootCount {
 	text-align: center;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100;
+	}
+}
+
+@keyframes slidedown {
+	from {
+		transform: scaleY(0) translateY(-25%);
+	}
+
+	to {
+		transform: scaleY(1) translateY(0);
+	}
 }

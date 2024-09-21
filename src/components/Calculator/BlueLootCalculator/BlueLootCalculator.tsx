@@ -88,7 +88,7 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 					onChange={this.onChange.bind(this)}
 				/>
 				{((document.getElementById("cargoInput") as HTMLInputElement)?.value ?? "") !== "" && (
-					<div>
+					<div className="blueLootDiv">
 						{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
 							<span className='cargoWarning notEnoughCargoWarning'>
 								<p>В карго недостаточно синьки для распределения</p>
