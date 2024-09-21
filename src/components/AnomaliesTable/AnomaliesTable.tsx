@@ -99,6 +99,7 @@ export class AnomaliesTable extends React.Component {
 		let anomalyDefinition = AnomalyDefinitons.get(type);
 		let alreadyPresentAnomsOfType = this.state.tableColumns.filter((col) => col.anomalyType === type).length;
 		let columnName = (anomalyDefinition?.short ?? "unknown") + (alreadyPresentAnomsOfType + 1);
+		if (newState.tableColumns.some((c) => c.name === columnName)) columnName += "(1)";
 		newState.tableColumns.push(new TableColumn(columnName, type));
 		this.setStateInternal(newState);
 	}
