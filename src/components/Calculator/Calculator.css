@@ -2,16 +2,22 @@
 	padding-left: 10px;
 }
 
+.cargoWarning {
+	margin-left: 15px;
+	margin-top: 50%;
+}
+
 .notEnoughCargoWarning {
 	color: red;
-	margin-left: 15px;
-	top: 50%;
+}
+.enoughCargoWarning {
+	color: green;
 }
 
 .blueLootTable {
 	border-style: solid 1px;
 	border-collapse: collapse;
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 .blueLootTableColumnHeading {
@@ -41,9 +47,13 @@
 	max-width: 300px;
 	min-height: 50px;
 	height: 50px;
-	margin-top: 15px;
+	margin-top: 3px;
 }
 
-.blueLootCount{
-    text-align: center;
+.blueLootCount {
+	text-align: center;
+}
+
+.blueLootCalculator {
+	padding-top: 30px;
 }

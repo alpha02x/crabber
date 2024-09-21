@@ -68,11 +68,16 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 
 	render(): React.ReactNode {
 		return (
-			<div>
+			<div className="blueLootCalculator">
+				<div>Карго:</div>
 				<textarea className="cargoInput" placeholder="Вставь карго сюда" onChange={this.onChange.bind(this)} />
-				{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney && (
-					<span className="notEnoughCargoWarning">
+				{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
+					<span className="cargoWarning notEnoughCargoWarning">
 						<p>В карго недостаточно синьки для распределения</p>
+					</span>
+				) : (
+					<span className="cargoWarning enoughCargoWarning">
+						<p>В карго достаточно синьки для распределения</p>
 					</span>
 				)}
 				<table className="blueLootTable">
