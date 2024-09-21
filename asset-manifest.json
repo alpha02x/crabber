@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/crabber/static/css/main.a4753b55.css",
-    "main.js": "/crabber/static/js/main.3c174575.js",
+    "main.js": "/crabber/static/js/main.27b03fd3.js",
     "static/js/787.ddc0f067.chunk.js": "/crabber/static/js/787.ddc0f067.chunk.js",
     "static/media/dark-mode-button.png": "/crabber/static/media/dark-mode-button.0c00ab46a88a84145b50.png",
     "static/media/arrow.svg": "/crabber/static/media/arrow.ce68d475676654a74b3a785f54f1f340.svg",
     "index.html": "/crabber/index.html",
     "main.a4753b55.css.map": "/crabber/static/css/main.a4753b55.css.map",
-    "main.3c174575.js.map": "/crabber/static/js/main.3c174575.js.map",
+    "main.27b03fd3.js.map": "/crabber/static/js/main.27b03fd3.js.map",
     "787.ddc0f067.chunk.js.map": "/crabber/static/js/787.ddc0f067.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a4753b55.css",
-    "static/js/main.3c174575.js"
+    "static/js/main.27b03fd3.js"
   ]
 }
