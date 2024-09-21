@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import BigNumber from "bignumber.js";
 
 export type CalculatorCharNameProps = {
 	char: [name: string, coef: number];
@@ -8,7 +9,10 @@ export type CalculatorCharNameProps = {
 export class CalculatorCharName extends React.Component<CalculatorCharNameProps> {
 	onChange(event: ChangeEvent<HTMLInputElement>) {
 		let parsedPercentage = Number.parseFloat(event.currentTarget.value);
-		let coefficient = Number.isNaN(parsedPercentage) ? 1 : 1 - (parsedPercentage > 100 ? 100 : parsedPercentage) / 100;
+		let coefficient = Number.isNaN(parsedPercentage)
+			? 1
+			: new BigNumber(1).minus((new BigNumber(parsedPercentage).isGreaterThan(100) ? new BigNumber(100) : new BigNumber(parsedPercentage)).div(100)).toNumber();
+		// : 1 - (parsedPercentage > 100 ? 100 : parsedPercentage) / 100;
 		this.props.changeCoefficient(this.props.char[0], coefficient);
 	}
 
@@ -25,7 +29,8 @@ export class CalculatorCharName extends React.Component<CalculatorCharNameProps>
 								placeholder="0"
 								onChange={this.onChange.bind(this)}
 								type="text"
-								value={(100 - this.props.char[1] * 100).toString()}
+								//value={(100 - this.props.char[1] * 100).toString()}
+								value={new BigNumber(100).minus(new BigNumber(this.props.char[1]).multipliedBy(new BigNumber(100))).toString()}
 							/>
 						}
 						%
