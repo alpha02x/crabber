@@ -31,25 +31,27 @@ export class Calculator extends React.Component<CalculatorProps> {
 
 	render(): React.ReactNode {
 		return (
-			<table className="calculator">
-				{this.props.chars.map((char) => (
+			<div className="calculatorContainer">
+				<table className="calculator">
+					{this.props.chars.map((char) => (
+						<tr>
+							<td className="calculatorFirstColumn">{char}</td>
+							<td>{this.calculateForChar(char, this.props.tableColumns) + " ISK"}</td>
+						</tr>
+					))}
 					<tr>
-						<td className="calculatorFirstColumn">{char}</td>
-						<td>{this.calculateForChar(char, this.props.tableColumns) + " ISK"}</td>
+						<td>&nbsp;&nbsp;&nbsp;Σ</td>
+						<td>
+							{this.props.tableColumns
+								.reduce((acc, curCol) => acc + this.getColumnPrice(curCol), 0)
+								.toLocaleString("ru-RU", {
+									minimumFractionDigits: 0,
+									maximumFractionDigits: 2,
+								}) + " ISK"}
+						</td>
 					</tr>
-				))}
-				<tr>
-					<td>&nbsp;&nbsp;&nbsp;Σ</td>
-					<td>
-						{this.props.tableColumns
-							.reduce((acc, curCol) => acc + this.getColumnPrice(curCol), 0)
-							.toLocaleString("ru-RU", {
-								minimumFractionDigits: 0,
-								maximumFractionDigits: 2,
-							}) + " ISK"}
-					</td>
-				</tr>
-			</table>
+				</table>
+			</div>
 		);
 	}
 }
