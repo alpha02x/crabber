@@ -67,6 +67,7 @@
     float: right;
     margin-left: 50px;
     font-family: monospace;
+    user-select: none;
 }
 
 .charNameLabel {
