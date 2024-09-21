@@ -12,27 +12,44 @@ export type ColumnHeadingProps = {
 export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 	render(): React.ReactNode {
 		return (
-			<div className="tableHeader">
+			<div className='tableHeader'>
 				<div>
-					<button className="deleteColumnButton" onClick={() => this.props.removeColumn(this.props.tableColumn.name)}>
+					<button
+						className='deleteColumnButton'
+						onClick={() => this.props.removeColumn(this.props.tableColumn.name)}
+					>
 						×
 					</button>
 					<span>{this.props.tableColumn.name}</span>
 				</div>
 
 				{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasAdditionalRats && (
-					<span className="nowrap">
-						<input onChange={() => this.props.changeAddRat(this.props.tableColumn.name)} checked={this.props.tableColumn.additionalRatKilled} type="checkbox"></input>
-						<span title="Дополнительный неписенок" className="checkboxExplanation nowrap">
+					<span className='nowrap'>
+						<input
+							onChange={() => this.props.changeAddRat(this.props.tableColumn.name)}
+							checked={this.props.tableColumn.additionalRatKilled}
+							type='checkbox'
+						></input>
+						<span
+							title='Дополнительный неписенок'
+							className='checkboxExplanation nowrap'
+						>
 							A
 						</span>
 					</span>
 				)}
 
 				{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasDrifter && (
-					<span className="nowrap">
-						<input onChange={() => this.props.changeDrifter(this.props.tableColumn.name)} checked={this.props.tableColumn.drifterKilled} type="checkbox"></input>
-						<span title="Дрифтер" className="checkboxExplanation nowrap">
+					<span className='nowrap'>
+						<input
+							onChange={() => this.props.changeDrifter(this.props.tableColumn.name)}
+							checked={this.props.tableColumn.drifterKilled}
+							type='checkbox'
+						></input>
+						<span
+							title='Дрифтер'
+							className='checkboxExplanation nowrap'
+						>
 							D
 						</span>
 					</span>

@@ -13,8 +13,16 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 
 	render(): React.ReactNode {
 		return (
-			<select className="anomalyAdditionControl" id="choice" onChange={this.onChange.bind(this)}>
-				<option value="none" hidden selected>
+			<select
+				className='anomalyAdditionControl'
+				id='choice'
+				onChange={this.onChange.bind(this)}
+			>
+				<option
+					value='none'
+					hidden
+					selected
+				>
 					+
 				</option>
 				{Array.from(AnomalyDefinitons.keys()).map((anom) => (

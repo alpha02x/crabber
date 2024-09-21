@@ -29,7 +29,11 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		return (
 			columns
 				.filter((col) => col.charsPassed.some((x) => x === char))
-				.reduce((income, currentColumn) => income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length, 0) * personalCoefficient
+				.reduce(
+					(income, currentColumn) =>
+						income + this.getColumnPrice(currentColumn) / currentColumn.charsPassed.length,
+					0
+				) * personalCoefficient
 		);
 	}
 
@@ -49,15 +53,21 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 	}
 
 	render(): React.ReactNode {
-		let charsToIncomeMap: [string, number][] = this.props.chars.map((char) => [char, this.calculateForChar(char, this.props.tableColumns)]);
+		let charsToIncomeMap: [string, number][] = this.props.chars.map((char) => [
+			char,
+			this.calculateForChar(char, this.props.tableColumns),
+		]);
 
 		return (
-			<div className="calculatorContainer">
-				<table className="calculator">
+			<div className='calculatorContainer'>
+				<table className='calculator'>
 					{charsToIncomeMap.map(([char, income]) => (
-						<tr className="calculatorTableRow">
-							<td className="calculatorFirstColumn">
-								<CalculatorCharName changeCoefficient={this.changeCoefficient.bind(this)} char={[char, this.state.charsCoefficients.get(char) ?? 1]} />
+						<tr className='calculatorTableRow'>
+							<td className='calculatorFirstColumn'>
+								<CalculatorCharName
+									changeCoefficient={this.changeCoefficient.bind(this)}
+									char={[char, this.state.charsCoefficients.get(char) ?? 1]}
+								/>
 							</td>
 							<td>
 								{income.toLocaleString("ru-RU", {
@@ -77,7 +87,10 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 						</td>
 					</tr>
 				</table>
-				<BlueLootCalculator totalFarmedMoney={this.getAllColumnsSum()} charsToIncomeMap={new Map(charsToIncomeMap)} />
+				<BlueLootCalculator
+					totalFarmedMoney={this.getAllColumnsSum()}
+					charsToIncomeMap={new Map(charsToIncomeMap)}
+				/>
 			</div>
 		);
 	}

@@ -9,8 +9,11 @@ export type CharNameProps = {
 export class CharName extends React.Component<CharNameProps> {
 	render(): React.ReactNode {
 		return (
-			<div className="charName">
-				<button className="deleteCharButton" onClick={() => this.props.removeCharFromTable(this.props.charName)}>
+			<div className='charName'>
+				<button
+					className='deleteCharButton'
+					onClick={() => this.props.removeCharFromTable(this.props.charName)}
+				>
 					×
 				</button>
 				{this.props.charName}

@@ -15,6 +15,13 @@ export class AnomalyPassedCheckBox extends React.Component<AnomaliesTableProps> 
 	};
 
 	render() {
-		return <input onChange={this.handleCheckboxChange} type="checkbox" name="scales" checked={this.props.checked}></input>;
+		return (
+			<input
+				onChange={this.handleCheckboxChange}
+				type='checkbox'
+				name='scales'
+				checked={this.props.checked}
+			></input>
+		);
 	}
 }
