@@ -1,7 +1,7 @@
 import React from "react";
 import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox";
 import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
-import { AnomalyAdditionControl } from "./AnomalyAdditionControl";
+import { AnomalyAdditionControl } from "./AnomalyAdditionControl/AnomalyAdditionControl";
 import { AnomalyDefinitons } from "../../definitions/Definitions";
 import { TableColumn } from "../../models/TableColumn";
 import "./AnomaliesTable.css";
