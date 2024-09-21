@@ -78,6 +78,7 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 	}
 
 	render(): React.ReactNode {
+		let isEnoughCargo = this.getCargoPrice(this.state.cargoContents) >= this.props.totalFarmedMoney;
 		return (
 			<div className='blueLootCalculator'>
 				<div>Карго:</div>
@@ -88,16 +89,12 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 					onChange={this.onChange.bind(this)}
 				/>
 				{((document.getElementById("cargoInput") as HTMLInputElement)?.value ?? "") !== "" && (
-					<div className="blueLootDiv">
-						{this.getCargoPrice(this.state.cargoContents) < this.props.totalFarmedMoney ? (
-							<span className='cargoWarning notEnoughCargoWarning'>
-								<p>В карго недостаточно синьки для распределения</p>
-							</span>
-						) : (
-							<span className='cargoWarning enoughCargoWarning'>
-								<p>В карго достаточно синьки для распределения</p>
-							</span>
-						)}
+					<div className='blueLootDiv'>
+						<span
+							className={`cargoWarning ${isEnoughCargo ? "enoughCargoWarning" : "notEnoughCargoWarning"}`}
+						>
+							<p>{`В карго ${isEnoughCargo ? "достаточно" : "недостаточно"} синьки для распределения`}</p>
+						</span>
 						<table className='blueLootTable'>
 							<tr className='blueLootTableHeaderRow'>
 								<th>Окно&nbsp;&nbsp;&nbsp;</th>
