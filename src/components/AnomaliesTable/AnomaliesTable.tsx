@@ -151,9 +151,7 @@ export class AnomaliesTable extends React.Component {
 							</tr>
 						))}
 						<tr>
-							<div className='charAdditionControlContainer'>
-								<CharAdditionControl addChar={this.addChar.bind(this)} />
-							</div>
+							<CharAdditionControl addChar={this.addChar.bind(this)} />
 						</tr>
 					</table>
 				</div>
