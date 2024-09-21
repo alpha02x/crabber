@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/crabber/static/css/main.16e33615.css",
+    "main.css": "/crabber/static/css/main.aef47c30.css",
     "main.js": "/crabber/static/js/main.0bd37e79.js",
     "static/js/787.ddc0f067.chunk.js": "/crabber/static/js/787.ddc0f067.chunk.js",
     "index.html": "/crabber/index.html",
-    "main.16e33615.css.map": "/crabber/static/css/main.16e33615.css.map",
+    "main.aef47c30.css.map": "/crabber/static/css/main.aef47c30.css.map",
     "main.0bd37e79.js.map": "/crabber/static/js/main.0bd37e79.js.map",
     "787.ddc0f067.chunk.js.map": "/crabber/static/js/787.ddc0f067.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16e33615.css",
+    "static/css/main.aef47c30.css",
     "static/js/main.0bd37e79.js"
   ]
 }
