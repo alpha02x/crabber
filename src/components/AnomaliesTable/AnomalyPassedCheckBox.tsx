@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { AnomaliesTable } from "../AnomaliesTable";
+import { AnomaliesTable } from "./AnomaliesTable";
 
 type AnomaliesTableProps = {
 	char: string;
