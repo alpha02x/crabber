@@ -5,7 +5,7 @@ import { AnomalyAdditionControl } from "./AnomalyAdditionControl";
 import { AnomalyDefinitons } from "../../entities/Constants";
 import { TableColumn } from "../../entities/TableColumn";
 import "./AnomaliesTable.css";
-import { Calculator } from "./Calculator";
+import { Calculator } from "../Calculator/Calculator";
 import { ColumnHeading } from "./ColumnHeading";
 import { CharName } from "./CharName";
 

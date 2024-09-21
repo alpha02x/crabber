@@ -2,6 +2,7 @@ import React from "react";
 import { TableColumn } from "../../entities/TableColumn";
 import { AnomalyDefinitons } from "../../entities/Constants";
 import { BlueLootCalculator } from "./BlueLootCalculator";
+import "./Calculator.css";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];

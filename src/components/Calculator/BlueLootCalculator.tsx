@@ -77,19 +77,20 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 				)}
 				<table className="blueLootTable">
 					<tr className="blueLootTableHeaderRow">
-						<th>Окно</th>
+						<th>Окно&nbsp;&nbsp;&nbsp;</th>
 						{Array.from(BlueLootDefinitons.keys()).map((blueLootName) => (
 							<th className="blueLootTableColumnHeading">{blueLootName}</th>
 						))}
-						<th>Цена синьки</th>
+						<th>&nbsp;&nbsp;&nbsp;Цена синьки</th>
 					</tr>
 					{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(([char, blueLoot]) => (
 						<tr className="tableCharRow">
 							<td className="calculatorFirstColumn">{char}</td>
 							{Array.from(blueLoot).map(([_, blueLootCount]) => (
-								<td>{blueLootCount}</td>
+								<td className="blueLootCount">{blueLootCount}</td>
 							))}
 							<td>
+								&nbsp;
 								{Array.from(blueLoot)
 									.reduce((acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!, 0)
 									.toLocaleString("ru-RU", {
