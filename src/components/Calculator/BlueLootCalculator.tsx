@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { BlueLootDefinitons } from "../../entities/Constants";
+import { BlueLootDefinitons } from "../../definitions/Definitions";
 
 export type BlueLoot = Map<string, number>;
 
