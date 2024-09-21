@@ -1,60 +1,36 @@
 .table {
-    border-style: solid 1px;
-    border-collapse: collapse;
+	border-style: solid 1px;
+	border-collapse: collapse;
 }
 
 .tableContainer {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 15px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-top: 15px;
 }
 
 .tableColumnHeaderAnomaly {
-    padding: 5px;
-}
-
-.tableHeader {
-    border-left-width: 1px;
-    border-left-style: solid;
-    padding-left: 5px;
-}
-
-.nowrap {
-    white-space: nowrap;
+	padding: 5px;
 }
 
 .tableCharRow {
-    border-bottom: 1px;
-    border-top: 1px;
-    border-right: 0px;
-    border-left: 0px;
-    border-color: grey;
-    border-style: solid;
-    border-collapse: collapse;
+	border-bottom: 1px;
+	border-top: 1px;
+	border-right: 0px;
+	border-left: 0px;
+	border-color: grey;
+	border-style: solid;
+	border-collapse: collapse;
 }
 
 .charAdditionControl {
-    border: 0px;
-    min-width: 150px;
-    background-color: #f5f4f0;
-    display: inline;
-}
-
-.checkboxExplanation {
-    font-weight: normal;
-    vertical-align: sub;
-    font-size: 80%;
-    text-decoration: underline dotted;
-}
-
-.deleteColumnButton {
-    margin-right: 5px;
-    border: none;
-    background: none;
-    color: red;
+	border: 0px;
+	min-width: 150px;
+	background-color: #f5f4f0;
+	display: inline;
 }
 
 .resetButton {
-    margin-top: 15px;
-    margin-bottom: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
