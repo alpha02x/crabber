@@ -26,3 +26,21 @@
 	border-style: solid;
 	border-collapse: collapse;
 }
+
+.table > .tableCharRow {
+	animation: fadein 300ms;
+}
+
+.table > .tableCharRow > td {
+	animation: fadein 200ms;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100;
+	}
+}
