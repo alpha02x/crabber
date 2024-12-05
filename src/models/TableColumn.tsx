@@ -3,6 +3,7 @@ export default class TableColumn {
 	anomalyType: string;
 	charsPassed: string[];
 	drifterKilled: boolean = false;
+	miniDrifterKilled: boolean = false;
 	additionalRatKilled: boolean = false;
 
 	constructor(name: string, anomalyType: string) {

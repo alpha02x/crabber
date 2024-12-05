@@ -55,10 +55,11 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps, Anomali
 		this.setStateInternal(newState);
 	}
 
-	changeDrifter(columnName: string) {
+	changeDrifter(columnName: string, hasMiniDrifter: boolean, hasBigDrifter: boolean) {
 		let newState = this.state;
 		let index = this.state.tableColumns.findIndex((x) => x.name === columnName);
-		newState.tableColumns[index].drifterKilled = !newState.tableColumns[index].drifterKilled;
+		newState.tableColumns[index].miniDrifterKilled = hasMiniDrifter;
+		newState.tableColumns[index].drifterKilled = hasBigDrifter;
 		this.setStateInternal(newState);
 	}
 

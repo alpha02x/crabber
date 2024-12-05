@@ -44,7 +44,8 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		if (column.additionalRatKilled) result += definition?.priceWithAdditionalShips ?? 0;
 		else result += definition?.basePrice ?? 0;
 
-		if (column.drifterKilled) result += 300000000;
+		if (column.miniDrifterKilled) result += AnomalyDefinitons.get("Drifter-Recon")!.basePrice;
+		if (column.drifterKilled) result += AnomalyDefinitons.get("Drifter")!.basePrice;
 		return result;
 	}
 
