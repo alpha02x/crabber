@@ -3,7 +3,19 @@
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm"
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+				"esbenp.prettier-vscode",
+				"ZainChen.json",
+				"mgmcdermott.vscode-language-babel"
+			]
+        }
+	},
+	"features": {
+		"ghcr.io/devcontainers-community/npm-features/prettier:1": {}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -12,7 +24,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	// "postCreateCommand": "node .devcontainer/setup.js",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
