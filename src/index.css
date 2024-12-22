@@ -9,3 +9,11 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+body > #root > div {
+	height: 100vh;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

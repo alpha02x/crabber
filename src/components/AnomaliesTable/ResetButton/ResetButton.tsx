@@ -1,5 +1,4 @@
 import React from "react";
-import "./ResetButton.css";
 
 type ResetButtonProps = {
 	resetState: () => void;
@@ -14,9 +13,9 @@ export class ResetButton extends React.Component<ResetButtonProps, ResetButtonSt
 
 	render(): React.ReactNode {
 		return (
-			<div>
-				<button
-					className='resetButton'
+			<div className="flex flex-row flex-nowrap mt-5 ml-5 md-5 2xl:ml-72">
+				<div
+					className='p-0.5 px-2 w-fit rounded-lg shadow-md hover:shadow-lg cursor-pointer select-none bg-eastern-blue-200 dark:bg-eastern-blue-700 dark:text-zinc-200'
 					onDoubleClick={() => {
 						this.setState({ showToolTip: false });
 						return this.props.resetState();
@@ -26,8 +25,9 @@ export class ResetButton extends React.Component<ResetButtonProps, ResetButtonSt
 					}}
 				>
 					Сброс
-				</button>
-				{this.state.showToolTip && <span className='resetButtonTooltip'>⇐ Двойной клик для сброса</span>}
+
+				</div>
+				{this.state.showToolTip && <div className='ml-3 select-none text-sm pt-1 text-zinc-400 animate-fadein300'>⇐ Двойной клик для сброса</div>}
 			</div>
 		);
 	}
