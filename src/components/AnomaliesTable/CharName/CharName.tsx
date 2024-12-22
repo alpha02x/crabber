@@ -16,7 +16,7 @@ export class CharName extends React.Component<CharNameProps> {
 				>
 					×
 				</button>
-				{this.props.charName}
+				<span className="dark:text-zinc-200">{this.props.charName}</span>
 			</div>
 		);
 	}

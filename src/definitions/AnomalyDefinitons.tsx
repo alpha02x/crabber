@@ -1,6 +1,7 @@
-type AnomalyDefinition = {
+export class AnomalyDefinition {
 	name: string;
 	short: string;
+	tag: string;
 	block: string;
 	whClass: WhClass;
 	data: boolean;
@@ -9,9 +10,33 @@ type AnomalyDefinition = {
 	priceWithAdditionalShips: number;
 	hasAdditionalRats: boolean;
 	hasDrifter: boolean;
-};
 
-enum WhClass {
+	constructor(name: string,
+		short: string,
+		tag: string,
+		block: string,
+		whClass: WhClass,
+		data: boolean,
+		relic: boolean,
+		basePrice: number,
+		priceWithAdditionalShips: number,
+		hasAdditionalRats: boolean,
+		hasDrifter: boolean) {
+		this.name = name;
+		this.short = short;
+		this.tag = tag;
+		this.block = block;
+		this.whClass = whClass;
+		this.data = data;
+		this.relic = relic;
+		this.basePrice = basePrice;
+		this.priceWithAdditionalShips = priceWithAdditionalShips;
+		this.hasAdditionalRats = hasAdditionalRats;
+		this.hasDrifter = hasDrifter;
+	}
+}
+
+export enum WhClass {
 	Unclassified,
 	C1,
 	C2,
@@ -43,7 +68,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5CG",
 		{
 			name: "Core Garrison",
-			short: ".CG-",
+			short: "CG",
+			tag: ".CG-",
 			block: "C5",
 			whClass: WhClass.C5,
 			data: false,
@@ -58,7 +84,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5CS",
 		{
 			name: "Core Stronghold",
-			short: ".ST-",
+			short: "ST",
+			tag: ".ST-",
 			block: "C5",
 			whClass: WhClass.C5,
 			data: false,
@@ -73,7 +100,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5OO",
 		{
 			name: "Oruze Osobnyk",
-			short: ".OO-",
+			short: "OO",
+			tag: ".OO-",
 			block: "C5",
 			whClass: WhClass.C5,
 			data: false,
@@ -88,7 +116,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5QA",
 		{
 			name: "Quarantine Area",
-			short: ".QA-",
+			short: "QA",
+			tag: ".QA-",
 			block: "C5",
 			whClass: WhClass.C5,
 			data: false,
@@ -103,7 +132,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3FFS",
 		{
 			name: "Fortification Frontier Stronghold",
-			short: "3FFS-",
+			short: "FFS",
+			tag: "3FFS-",
 			block: "C3",
 			whClass: WhClass.C3,
 			data: false,
@@ -118,7 +148,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3OFS",
 		{
 			name: "Outpost Frontier Stronghold",
-			short: "3OFS-",
+			short: "OFS",
+			tag: "3OFS-",
 			block: "C3",
 			whClass: WhClass.C3,
 			data: false,
@@ -133,7 +164,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3SC",
 		{
 			name: "Solar Cell",
-			short: "3SC-",
+			short: "SC",
+			tag: "3SC-",
 			block: "C3",
 			whClass: WhClass.C3,
 			data: false,
@@ -148,7 +180,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3OC",
 		{
 			name: "The Oruze Construct",
-			short: "3OC-",
+			short: "OC",
+			tag: "3OC-",
 			block: "C3",
 			whClass: WhClass.C3,
 			data: false,
@@ -163,7 +196,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3R-FFQO",
 		{
 			name: "Forgotten Frontier Quarantine Outpost",
-			short: "3R-FFQO-",
+			short: "QO",
+			tag: "3R-FFQO-",
 			block: "C3 Relic",
 			whClass: WhClass.C3,
 			data: false,
@@ -178,7 +212,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3R-FFRD",
 		{
 			name: "Forgotten Frontier Recursive Depot",
-			short: "3R-FFRD-",
+			short: "RD",
+			tag: "3R-FFRD-",
 			block: "C3 Relic",
 			whClass: WhClass.C3,
 			data: false,
@@ -193,7 +228,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3D-UFD",
 		{
 			name: "Unsecured Frontier Database",
-			short: "3D-UFD-",
+			short: "FD",
+			tag: "3D-UFD-",
 			block: "C3 Data",
 			whClass: WhClass.C3,
 			data: true,
@@ -208,7 +244,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"3D-UFR",
 		{
 			name: "Unsecured Frontier Receiver",
-			short: "3D-UFR-",
+			short: "FR",
+			tag: "3D-UFR-",
 			block: "C3 Data",
 			whClass: WhClass.C3,
 			data: true,
@@ -223,7 +260,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"Drifter",
 		{
 			name: "Дрифтер",
-			short: "D-",
+			short: "D",
+			tag: "D-",
 			block: "Другое",
 			whClass: WhClass.Unclassified,
 			data: false,
@@ -238,7 +276,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"Drifter-Recon",
 		{
 			name: "Минидрифтер",
-			short: "MD-",
+			short: "RD",
+			tag: "MD-",
 			block: "Другое",
 			whClass: WhClass.Unclassified,
 			data: false,
@@ -253,7 +292,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5CEW",
 		{
 			name: "Капдоресп C5",
-			short: "5CEW-",
+			short: "Upg",
+			tag: "5CEW-",
 			block: "Другое",
 			whClass: WhClass.C5,
 			data: false,
@@ -268,7 +308,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"6CEW",
 		{
 			name: "Капдоресп C6",
-			short: "6CEW-",
+			short: "Upg",
+			tag: "6CEW-",
 			block: "Другое",
 			whClass: WhClass.C6,
 			data: false,
@@ -283,7 +324,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"6CC",
 		{
 			name: "Core Citadel",
-			short: ".CC-",
+			short: "CS",
+			tag: ".CC-",
 			block: "C6",
 			whClass: WhClass.C6,
 			data: false,
@@ -298,7 +340,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"6CB",
 		{
 			name: "Core Bastion",
-			short: ".CB-",
+			short: "CB",
+			tag: ".CB-",
 			block: "C6",
 			whClass: WhClass.C6,
 			data: false,
@@ -313,7 +356,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"6SER",
 		{
 			name: "Strange Energy Readings",
-			short: ".SER-",
+			short: "SER",
+			tag: ".SER-",
 			block: "C6",
 			whClass: WhClass.C6,
 			data: false,
@@ -328,7 +372,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"6TM",
 		{
 			name: "The Mirror",
-			short: ".TM-",
+			short: "TM",
+			tag: ".TM-",
 			block: "C6",
 			whClass: WhClass.C6,
 			data: false,
@@ -343,7 +388,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5R-FCDF",
 		{
 			name: "Forgotten Core Data Field",
-			short: "5R-FCDF-",
+			short: "DF",
+			tag: "5R-FCDF-",
 			block: "C5 Relic",
 			whClass: WhClass.C5,
 			data: false,
@@ -358,7 +404,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5R-FCIP",
 		{
 			name: "Forgotten Core Information Pen",
-			short: "5R-FCIP-",
+			short: "IP",
+			tag: "5R-FCIP-",
 			block: "C5 Relic",
 			whClass: WhClass.C5,
 			data: false,
@@ -373,7 +420,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5D-UFER",
 		{
 			name: "Unsecured Frontier Enclave Relay",
-			short: "5D-UFER-",
+			short: "ER",
+			tag: "5D-UFER-",
 			block: "C5 Data",
 			whClass: WhClass.C5,
 			data: true,
@@ -388,7 +436,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"5D-UFSB",
 		{
 			name: "Unsecured Frontier Server Bank",
-			short: "5D-UFSB-",
+			short: "SB",
+			tag: "5D-UFSB-",
 			block: "C5 Data",
 			whClass: WhClass.C5,
 			data: true,
@@ -403,7 +452,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"4FB",
 		{
 			name: "Frontier Barracks",
-			short: "4FB-",
+			short: "FB",
+			tag: "4FB-",
 			block: "C4",
 			whClass: WhClass.C4,
 			data: false,
@@ -418,7 +468,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"4FCP",
 		{
 			name: "Frontier Command Post",
-			short: "4FCP-",
+			short: "FCP",
+			tag: "4FCP-",
 			block: "C4",
 			whClass: WhClass.C4,
 			data: false,
@@ -433,7 +484,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"4IT",
 		{
 			name: "Integrated Terminus",
-			short: "4IT-",
+			short: "IT",
+			tag: "4IT-",
 			block: "C4",
 			whClass: WhClass.C4,
 			data: false,
@@ -448,7 +500,8 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 		"4SIS",
 		{
 			name: "Sleeper Information Sanctum",
-			short: "4SIS-",
+			short: "SIS",
+			tag: "4SIS-",
 			block: "C4",
 			whClass: WhClass.C4,
 			data: false,

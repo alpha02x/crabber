@@ -123,7 +123,7 @@ export class App extends React.Component {
         let newTableState = this.state.tableState;
         let anomalyDefinition = AnomalyDefinitons.get(type);
         let alreadyPresentAnomsOfType = this.state.tableState.tableColumns.filter((col) => col.anomalyType === type).length;
-        let columnName = (anomalyDefinition?.short ?? "unknown") + (alreadyPresentAnomsOfType + 1);
+        let columnName = (anomalyDefinition?.tag ?? "unknown") + (alreadyPresentAnomsOfType + 1);
         if (newTableState.tableColumns.some((c) => c.name === columnName)) columnName += "(1)";
         newTableState.tableColumns.push(new TableColumn(columnName, type));
         this.setTableState(newTableState);

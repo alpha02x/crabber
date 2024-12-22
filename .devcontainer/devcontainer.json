@@ -11,7 +11,8 @@
 				"ZainChen.json",
 				"mgmcdermott.vscode-language-babel",
 				"mutantdino.resourcemonitor",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"EditorConfig.EditorConfig"
 			]
         }
 	},

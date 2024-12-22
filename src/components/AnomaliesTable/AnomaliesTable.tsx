@@ -27,7 +27,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 				<div className='overflow-x-auto overflow-y-visible mt-5 ml-5 mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
 					<table className="pt-2 mb-2 px-3">
 						<tr className="bg-zinc-200 dark:bg-zinc-500">
-							<th className="pl-3 align-middle text-left font-normal">Окно</th>
+							<th className="pl-3 align-middle text-left font-normal dark:text-zinc-200">Окно</th>
 							{this.props.tableColumns.map((column) => (
 								<th>
 									<ColumnHeading
@@ -45,8 +45,8 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 							</th>
 						</tr>
 						{this.props.chars.map((char) => (
-							<tr key={char} className='tableCharRow'>
-								<td className="pl-3">
+							<tr key={char} className={`${this.props.chars.indexOf(char) % 2 === 1 ? "bg-opacity-40 dark:bg-opacity-30 dark:bg-zinc-700 bg-zinc-200" : ""} tableCharRow`}>
+								<td className="pl-3 py-1">
 									<CharName
 										removeCharFromTable={this.props.removeCharFromTable}
 										charName={char}

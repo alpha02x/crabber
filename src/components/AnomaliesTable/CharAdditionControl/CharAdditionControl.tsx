@@ -28,7 +28,7 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 
 	render(): React.ReactNode {
 		return (
-			<div className='ml-2 mt-1 mb-1 p-1 min-w-150 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
+			<div className='ml-2 mt-2 mb-1 p-1 min-w-150 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
 				<input
 					id='char-addition-input'
 					className='bg-transparent pl-0.5'
