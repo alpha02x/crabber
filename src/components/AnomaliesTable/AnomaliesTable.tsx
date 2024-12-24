@@ -1,5 +1,5 @@
 import React from "react";
-import { AnomalyPassedCheckBox } from "./AnomalyPassedCheckBox/AnomalyPassedCheckBox";
+import { AnomalyCheckBox } from "./AnomalyCheckBox/AnomalyCheckBox";
 import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
 import { AnomalyAdditionControl } from "./AnomalyAdditionControl/AnomalyAdditionControl";
 import TableColumn from "../../models/TableColumn";
@@ -10,12 +10,14 @@ import ResetButton from "./ResetButton/ResetButton";
 type AnomaliesTableProps = {
 	tableColumns: TableColumn[];
 	chars: string[];
+	precheckedChars: string[];
 	removeColumn: (columnName: string) => void;
 	changeDrifter: (columnName: string, hasMiniDrifter: boolean, hasBigDrifter: boolean) => void;
 	changeAddRat: (columnName: string) => void;
 	addAnomaly: (type: string) => void;
 	removeCharFromTable: (charName: string) => void;
 	setCharStatusForAnomaly: (charName: string, anomalyName: string, passed: boolean) => void;
+	setPrecheck: (charName: string) => void;
 	addChar: (char: string) => void;
 	resetState: () => void;
 };
@@ -24,7 +26,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 	render() {
 		return (
 			[
-				<div className='overflow-x-auto overflow-y-visible mt-5 ml-5 mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
+				<div className='overflow-x-auto overflow-y-visible mt-5 ml-2 mr-3 sm:ml-5 sm:mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
 					<table className="pt-2 mb-2 px-3 w-full">
 						<tbody>
 							<tr className="bg-zinc-200 dark:bg-zinc-500">
@@ -58,14 +60,24 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 									</td>
 									{this.props.tableColumns.map((column) => (
 										<td>
-											<AnomalyPassedCheckBox
-												checked={column.charsPassed.some((passed) => passed === char)}
+											<AnomalyCheckBox
+												checked={column.charsPassed.includes(char)}
 												char={char}
 												anomalyName={column.name}
 												setCharStatusForAnomaly={this.props.setCharStatusForAnomaly}
 											/>
 										</td>
 									))}
+									<td className="opacity-40">
+										<div className="float-start ml-2">
+											<AnomalyCheckBox
+												checked={this.props.precheckedChars.includes(char)}
+												char={char}
+												anomalyName="preCheck"
+												setCharStatusForAnomaly={this.props.setPrecheck}
+											></AnomalyCheckBox>
+										</div>
+									</td>
 								</tr>
 							))}
 							<tr>

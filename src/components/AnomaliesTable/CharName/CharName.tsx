@@ -8,7 +8,7 @@ export type CharNameProps = {
 export class CharName extends React.Component<CharNameProps> {
 	render(): React.ReactNode {
 		return (
-			<div className='flex flex-row flex-nowrap w-full text-nowrap max-w-56'>
+			<div className='flex flex-row flex-nowrap w-full text-nowrap max-w-44 sm:max-w-56'>
 				<div
 					className="flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap overflow-ellipsis m-auto"
 					title={this.props.charName}>

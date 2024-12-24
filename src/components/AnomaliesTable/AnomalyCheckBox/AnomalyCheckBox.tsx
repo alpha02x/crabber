@@ -7,7 +7,7 @@ type AnomaliesTableProps = {
 	setCharStatusForAnomaly: (charName: string, anomalyName: string, passed: boolean) => void;
 };
 
-export class AnomalyPassedCheckBox extends React.Component<AnomaliesTableProps> {
+export class AnomalyCheckBox extends React.Component<AnomaliesTableProps> {
 	handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
 		let newValue: boolean = event.target.checked;
 		this.props.setCharStatusForAnomaly(this.props.char, this.props.anomalyName, newValue);
