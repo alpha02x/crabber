@@ -28,17 +28,17 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 
 	render(): React.ReactNode {
 		return (
-			<div className='ml-2 mt-2 mb-1 p-1 min-w-150 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
+			<div className='flex flex-row flex-nowrap ml-2 mt-2 mb-1 p-1 w-56 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
 				<input
 					id='char-addition-input'
-					className='bg-transparent pl-0.5'
+					className='flex-1 pl-0.5 bg-transparent'
 					placeholder='Введи имя персонажа'
 					onChange={this.onChange.bind(this)}
 					onKeyDown={this.onKeyDown.bind(this)}
 					type='text'
 				></input>
 				<svg
-					className="h-5 w-5 inline pb-0.5 text-nowrap cursor-pointer text-eastern-blue-500"
+					className="h-5 w-5 inline m-0.5 text-nowrap cursor-pointer text-eastern-blue-500"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"

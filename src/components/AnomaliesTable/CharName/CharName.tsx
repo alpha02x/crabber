@@ -1,5 +1,4 @@
 import React from "react";
-import "./CharName.css";
 
 export type CharNameProps = {
 	charName: string;
@@ -9,14 +8,20 @@ export type CharNameProps = {
 export class CharName extends React.Component<CharNameProps> {
 	render(): React.ReactNode {
 		return (
-			<div className='charName'>
-				<button
-					className='deleteCharButton'
-					onClick={() => this.props.removeCharFromTable(this.props.charName)}
-				>
-					×
-				</button>
-				<span className="dark:text-zinc-200">{this.props.charName}</span>
+			<div className='flex flex-row flex-nowrap w-full text-nowrap max-w-56'>
+				<div
+					className="flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap overflow-ellipsis m-auto"
+					title={this.props.charName}>
+					{this.props.charName}
+				</div>
+				<div className="w-3 mx-3 mr-4">
+					<button
+						className="w-full text-red-700 dark:text-[#e96164]"
+						onClick={() => this.props.removeCharFromTable(this.props.charName)}
+					>
+						×
+					</button>
+				</div>
 			</div>
 		);
 	}

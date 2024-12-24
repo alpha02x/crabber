@@ -25,49 +25,57 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 		return (
 			[
 				<div className='overflow-x-auto overflow-y-visible mt-5 ml-5 mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
-					<table className="pt-2 mb-2 px-3">
-						<tr className="bg-zinc-200 dark:bg-zinc-500">
-							<th className="pl-3 align-middle text-left font-normal dark:text-zinc-200">Окно</th>
-							{this.props.tableColumns.map((column) => (
-								<th>
-									<ColumnHeading
-										removeColumn={this.props.removeColumn}
-										changeAddRat={this.props.changeAddRat}
-										changeDrifter={this.props.changeDrifter}
-										tableColumn={column}
-									/>
-								</th>
-							))}
-							<th>
-								<span className='anomalyAdditionControlContainer'>
-									<AnomalyAdditionControl addAnomaly={this.props.addAnomaly} />
-								</span>
-							</th>
-						</tr>
-						{this.props.chars.map((char) => (
-							<tr key={char} className={`${this.props.chars.indexOf(char) % 2 === 1 ? "bg-opacity-40 dark:bg-opacity-30 dark:bg-zinc-700 bg-zinc-200" : ""} tableCharRow`}>
-								<td className="pl-3 py-1">
-									<CharName
-										removeCharFromTable={this.props.removeCharFromTable}
-										charName={char}
-									/>
-								</td>
+					<table className="pt-2 mb-2 px-3 w-full">
+						<tbody>
+							<tr className="bg-zinc-200 dark:bg-zinc-500">
+								<th className="sticky left-0 z-10 pl-3 align-middle text-left font-normal dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-500">Окно</th>
 								{this.props.tableColumns.map((column) => (
-									<td>
-										<AnomalyPassedCheckBox
-											checked={column.charsPassed.some((passed) => passed === char)}
-											char={char}
-											anomalyName={column.name}
-											setCharStatusForAnomaly={this.props.setCharStatusForAnomaly}
+									<th>
+										<ColumnHeading
+											removeColumn={this.props.removeColumn}
+											changeAddRat={this.props.changeAddRat}
+											changeDrifter={this.props.changeDrifter}
+											tableColumn={column}
+										/>
+									</th>
+								))}
+								<th className="w-full">
+									<span className='px-1 float-start'>
+										<AnomalyAdditionControl addAnomaly={this.props.addAnomaly} />
+									</span>
+								</th>
+							</tr>
+							{this.props.chars.map((char) => (
+								<tr key={char} className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
+									<td className={"sticky left-0 z-10 pl-3 py-1 " +
+										(this.props.chars.indexOf(char) % 2 === 1 ?
+											"bg-[#f1f1f3] dark:bg-[#4c4c55]" :
+											"bg-[#f9fafb] dark:bg-zinc-600")}>
+										<CharName
+											removeCharFromTable={this.props.removeCharFromTable}
+											charName={char}
 										/>
 									</td>
-								))}
+									{this.props.tableColumns.map((column) => (
+										<td>
+											<AnomalyPassedCheckBox
+												checked={column.charsPassed.some((passed) => passed === char)}
+												char={char}
+												anomalyName={column.name}
+												setCharStatusForAnomaly={this.props.setCharStatusForAnomaly}
+											/>
+										</td>
+									))}
+								</tr>
+							))}
+							<tr>
+								<td className="sticky left-0">
+									<CharAdditionControl addChar={this.props.addChar} />
+								</td>
 							</tr>
-						))}
-						<tr>
-							<CharAdditionControl addChar={this.props.addChar} />
-						</tr>
+						</tbody>
 					</table>
+
 				</div>,
 				<ResetButton resetState={this.props.resetState} />
 			]

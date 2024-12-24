@@ -8,9 +8,7 @@
         "vscode": {
             "extensions": [
 				"esbenp.prettier-vscode",
-				"ZainChen.json",
 				"mgmcdermott.vscode-language-babel",
-				"mutantdino.resourcemonitor",
 				"bradlc.vscode-tailwindcss",
 				"EditorConfig.EditorConfig"
 			]
