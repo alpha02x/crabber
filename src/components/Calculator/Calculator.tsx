@@ -60,7 +60,7 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		]);
 
 		return (
-			<div className='calculatorContainer'>
+			<div className='overflow-hidden mb-7 mt-5 ml-2 mr-3 sm:ml-5 sm:mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
 				<table className='calculator'>
 					{charsToIncomeMap.map(([char, income]) => (
 						<tr className='calculatorTableRow'>

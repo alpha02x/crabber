@@ -152,7 +152,6 @@ export class App extends React.Component {
 		this.setTableState({ ...this.state.tableState, precheckedChars: newPrechecked });
 	}
 
-
 	render(): React.ReactNode {
 		return (
 			<div className={"h-full w-full" + (this.isDarkTheme() ? " dark" : "")}>
