@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crabber/static/css/main.65e51457.css",
-    "main.js": "/crabber/static/js/main.66781972.js",
+    "main.js": "/crabber/static/js/main.70383d82.js",
     "static/media/data_Site_16.png": "/crabber/static/media/data_Site_16.28fdd265b0d1d209a281.png",
     "static/media/dark-mode-button.png": "/crabber/static/media/dark-mode-button.0c00ab46a88a84145b50.png",
     "index.html": "/crabber/index.html"
   },
   "entrypoints": [
     "static/css/main.65e51457.css",
-    "static/js/main.66781972.js"
+    "static/js/main.70383d82.js"
   ]
 }
