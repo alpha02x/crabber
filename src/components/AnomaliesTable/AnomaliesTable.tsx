@@ -87,7 +87,6 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 							</tr>
 						</tbody>
 					</table>
-
 				</div>,
 				<ResetButton resetState={this.props.resetState} />
 			]

@@ -51,7 +51,9 @@ export class CalculatorCharName extends React.Component<CalculatorCharNameProps>
 		return (
 			<div className='flex flex-row flex-nowrap w-full text-nowrap pr-3'>
 				<div className='flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap overflow-ellipsis m-auto'>{this.props.char[0]}</div>
-				<div className={'inline pl-4 w-10 m-auto float-right text-nowrap font-mono text-sm select-none' + (this.state.isError ? " text-red-600 dark:text-red-600" : " dark:text-zinc-200")}>
+				<div className={'inline pl-4 w-14 m-auto float-right text-nowrap font-mono text-sm select-none '
+					+ (this.state.isError ? " text-red-600 dark:text-red-600 " : " dark:text-zinc-200 ")
+					+ (this.props.char[1] === 1 ? " opacity-50" : "")}>
 					<span className="inline-block">-</span>
 					{
 						<input
@@ -67,7 +69,7 @@ export class CalculatorCharName extends React.Component<CalculatorCharNameProps>
 							value={this.state.lastValue ?? "0"}
 						/>
 					}
-					<span className="inline-block">%</span>
+					<span className="inline-block text-[13px]">%</span>
 				</div>
 			</div>
 		);

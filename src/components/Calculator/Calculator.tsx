@@ -52,6 +52,10 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		return this.props.tableColumns.reduce((acc, currentColumn) => acc + this.getColumnPrice(currentColumn), 0);
 	}
 
+	getAllCharsSum(): number {
+		return this.props.chars.reduce((acc, curChar) => acc + this.calculateForChar(curChar, this.props.tableColumns), 0);
+	}
+
 	render(): React.ReactNode {
 		let charsToIncomeMap: [string, number][] = this.props.chars.map((char) => [
 			char,
@@ -59,8 +63,8 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		]);
 
 		return (
-			<div className='overflow-hidden mb-7 mt-5 ml-2 mr-3 sm:ml-5 sm:mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
-				<div className='m-3 py-1 bg-zinc-100 dark:bg-zinc-500 rounded-xl w-fit'>
+			<div className='flex flex-col flex-nowrap overflow-auto mb-7 mt-5 ml-2 mr-3 py-2 sm:ml-5 sm:mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
+				<div className='w-fit m-3 py-1 shadow-sm bg-zinc-100 dark:bg-zinc-500 rounded-xl'>
 					<table>
 						{charsToIncomeMap.map(([char, income]) => (
 							<tr className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#52525b]/40 bg-zinc-200/50" : ""}>
@@ -81,7 +85,7 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 								</td>
 							</tr>
 						))}
-						<tr className="">
+						<tr>
 							<td className="pt-1 pr-1 pl-3 text-right dark:text-zinc-200">Итого:</td>
 							<td className="pt-2 pl-7 text-right font-mono dark:text-zinc-200">
 								{this.getAllColumnsSum().toLocaleString("ru-RU", {
@@ -96,7 +100,7 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 					</table>
 				</div>
 				<BlueLootCalculator
-					totalFarmedMoney={this.getAllColumnsSum()}
+					totalFarmedMoney={this.getAllCharsSum()}
 					charsToIncomeMap={new Map(charsToIncomeMap)}
 				/>
 			</div>
