@@ -18,7 +18,8 @@ export class DrifterControl extends React.Component<DrifterControlProps> {
 			<div
 				title={this.renderTitle()}
 				className={(this.props.column.drifterKilled || this.props.column.miniDrifterKilled ? "text-zinc-800 dark:text-eastern-blue-300" : "text-zinc-500 dark:text-zinc-300 hover:text-xs hover:scale-90") +
-					' inline-block h-4 w-4 font-bold text-sm text-center mx-auto select-none cursor-pointer'} onClick={() => this.cycleDrifter()}>
+					' inline-block h-4 w-4 font-bold text-sm text-center mx-auto select-none cursor-pointer'}
+				onClick={() => this.cycleDrifter()}>
 				{this.renderDrifter()}
 			</div>
 		)

@@ -93,7 +93,7 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 				<div className="px-3 my-0.5 dark:text-zinc-100">Карго:</div>
 				<textarea
 					id='cargoInput'
-					className='w-80 min-h-28 max-h-64 mx-3 px-1 pt-1 mt-1 mb-2 rounded-md font-mono text-[0.8125rem] dark:text-zinc-100 dark:bg-zinc-400 placeholder:text-zinc-300'
+					className='w-80 min-h-16 max-h-64 mx-3 px-1 pt-1 mt-1 mb-2 rounded-md font-mono text-[0.8125rem] dark:text-zinc-100 dark:bg-zinc-400 placeholder:text-zinc-300'
 					placeholder='Вставь карго сюда'
 					onChange={this.onChange.bind(this)}
 				/>
