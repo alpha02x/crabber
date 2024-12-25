@@ -79,9 +79,11 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 
 	getCargoPrice(cargoContents: Map<string, number>): number {
 		return Array.from(cargoContents).reduce(
-			(acc, [blueLootName, blueLootCount]) => acc + blueLootCount * BlueLootDefinitons.get(blueLootName)!,
-			0
-		);
+			(acc, [blueLootName, blueLootCount]) =>
+				acc.plus(new BigNumber(blueLootCount)
+					.multipliedBy(new BigNumber(BlueLootDefinitons.get(blueLootName)!))),
+			new BigNumber(0)
+		).toNumber();
 	}
 
 	render(): React.ReactNode {
