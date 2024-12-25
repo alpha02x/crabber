@@ -1,6 +1,5 @@
 import React from "react";
-import DarkModeButtonImg from "./dark-mode-button.png";
-import "./DarkModeButton.css";
+import ButtonImg from "../assets/dark-mode-button.png";
 
 type DarkModeButtonProps = {
 	darkTheme: boolean;
@@ -12,9 +11,9 @@ export class DarkModeButton extends React.Component<DarkModeButtonProps> {
 	render(): React.ReactNode {
 		return (
 			<img
-				className={"darkModeButton " + (this.props.darkTheme ? "inverted" : "")}
+				className={"h-5 w-5 fixed bottom-1 right-1 cursor-pointer dark:invert"}
 				alt='Темная тема'
-				src={DarkModeButtonImg}
+				src={ButtonImg}
 				onClick={() => {
 					if (this.props.darkTheme) {
 						this.props.disableDarkTheme();

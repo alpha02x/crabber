@@ -1,0 +1,135 @@
+{
+	"chars": [
+		"123",
+		"4564",
+		"4848",
+		"486",
+		"1321",
+		"685416",
+		"1681961",
+		"65168",
+		"19865",
+		"588518",
+		"984829",
+		"9841",
+		"665",
+		"68",
+		"46",
+		"64673",
+		"32"
+	],
+	"tableColumns": [
+		{
+			"name": ".CG-1",
+			"anomalyType": "5CG",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": true,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".CG-2",
+			"anomalyType": "5CG",
+			"charsPassed": ["64673", "1681961"],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".ST-1",
+			"anomalyType": "5CS",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".ST-2",
+			"anomalyType": "5CS",
+			"charsPassed": [],
+			"drifterKilled": true,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".CG-3",
+			"anomalyType": "5CG",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".OO-1",
+			"anomalyType": "5OO",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": true
+		},
+		{
+			"name": ".OO-2",
+			"anomalyType": "5OO",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": "5D-UFER-1",
+			"anomalyType": "5D-UFER",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": "5D-UFSB-1",
+			"anomalyType": "5D-UFSB",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": "5D-UFSB-2",
+			"anomalyType": "5D-UFSB",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": "5D-UFER-2",
+			"anomalyType": "5D-UFER",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".CG-4",
+			"anomalyType": "5CG",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".CG-5",
+			"anomalyType": "5CG",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		},
+		{
+			"name": ".OO-3",
+			"anomalyType": "5OO",
+			"charsPassed": [],
+			"drifterKilled": false,
+			"miniDrifterKilled": false,
+			"additionalRatKilled": false
+		}
+	]
+}

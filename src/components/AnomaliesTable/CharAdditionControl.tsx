@@ -1,6 +1,4 @@
 import React, { ChangeEvent, KeyboardEvent } from "react";
-import Arrow from "./arrow.svg";
-import "./CharAdditionControl.css";
 
 type CharAdditionControlProps = {
 	addChar: (char: string) => void;
@@ -21,7 +19,7 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 	addNewChar(char: string) {
 		if (char === "") return;
 		this.props.addChar(char);
-		(document.getElementById("charAdditionControl") as HTMLTextAreaElement).value = "";
+		(document.getElementById("char-addition-input") as HTMLTextAreaElement).value = "";
 	}
 
 	onChange(event: ChangeEvent<HTMLInputElement>) {
@@ -30,22 +28,26 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 
 	render(): React.ReactNode {
 		return (
-			<div className='charAdditionControl'>
-				{" "}
+			<div className='flex flex-row flex-nowrap ml-2 mt-2 mb-1 p-1 sm:w-56 w-44 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
 				<input
-					id='charAdditionControl'
-					className='charAdditionControl'
+					id='char-addition-input'
+					className='flex-1 pl-0.5 bg-transparent dark:text-zinc-100'
 					placeholder='Введи имя персонажа'
 					onChange={this.onChange.bind(this)}
 					onKeyDown={this.onKeyDown.bind(this)}
 					type='text'
 				></input>
-				<img
-					src={Arrow}
-					alt='Ввод'
-					onClick={() => this.addNewChar(this.state.charName)}
-					className='addCharButton'
-				/>
+				<svg
+					className="h-5 w-5 inline m-0.5 text-nowrap cursor-pointer text-eastern-blue-500"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					onClick={() => this.addNewChar(this.state.charName)}>
+					<polygon points="5 3 19 12 5 21 5 3" />
+				</svg>
 			</div>
 		);
 	}

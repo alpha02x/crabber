@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from "react";
-import AnomalyDefinitons, { Blocks } from "../../../definitions/AnomalyDefinitons";
-import "./AnomalyAdditionControl.css";
+import AnomalyDefinitons, { Blocks } from "../../definitions/AnomalyDefinitons";
 
 type AnomalyAdditionControlProps = {
 	addAnomaly: (type: string) => void;
@@ -15,7 +14,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 	render(): React.ReactNode {
 		return (
 			<select
-				className='anomalyAdditionControl'
+				className='w-10 m-auto rounded-lg font-normal my-2 cursor-pointer'
 				id='choice'
 				onChange={this.onChange.bind(this)}
 			>
@@ -24,7 +23,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 					hidden
 					selected
 				>
-					+
+					&nbsp;+
 				</option>
 
 				{Blocks.map((block) => {
