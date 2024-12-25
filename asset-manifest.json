@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/crabber/static/css/main.5d2dcb8c.css",
-    "main.js": "/crabber/static/js/main.c4a27cf1.js",
+    "main.css": "/crabber/static/css/main.35a5f7cd.css",
+    "main.js": "/crabber/static/js/main.409e5a51.js",
+    "static/media/data_Site_16.png": "/crabber/static/media/data_Site_16.28fdd265b0d1d209a281.png",
     "static/media/dark-mode-button.png": "/crabber/static/media/dark-mode-button.0c00ab46a88a84145b50.png",
-    "static/media/arrow.svg": "/crabber/static/media/arrow.ce68d475676654a74b3a785f54f1f340.svg",
-    "index.html": "/crabber/index.html",
-    "main.5d2dcb8c.css.map": "/crabber/static/css/main.5d2dcb8c.css.map",
-    "main.c4a27cf1.js.map": "/crabber/static/js/main.c4a27cf1.js.map"
+    "index.html": "/crabber/index.html"
   },
   "entrypoints": [
-    "static/css/main.5d2dcb8c.css",
-    "static/js/main.c4a27cf1.js"
+    "static/css/main.35a5f7cd.css",
+    "static/js/main.409e5a51.js"
   ]
 }
