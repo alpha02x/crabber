@@ -89,7 +89,7 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 	render(): React.ReactNode {
 		let isEnoughCargo = this.getCargoPrice(this.state.cargoContents) >= this.props.totalFarmedMoney;
 		return (
-			<div className={(this.props.charsToIncomeMap.size < 1 ? "hidden " : "") + 'w-fit m-3 py-1 shadow-sm bg-zinc-100 dark:bg-zinc-500 rounded-xl'}>
+			<div className={(this.props.charsToIncomeMap.size < 1 ? "hidden " : "") + 'w-fit m-3 pt-1 shadow-sm bg-zinc-100 dark:bg-zinc-500 rounded-xl'}>
 				<div className="px-3 my-0.5 dark:text-zinc-100">Карго:</div>
 				<textarea
 					id='cargoInput'
@@ -121,7 +121,7 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 							{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(
 								([char, blueLoot]) => (
 									<tr className={(Array.from(this.props.charsToIncomeMap.keys()).indexOf(char) % 2 === 1) ? "dark:bg-[#52525b]/40 bg-zinc-200/50" : ""}>
-										<td className='pt-1 pl-3 pr-4 overflow-hidden text-nowrap text-ellipsis max-w-44 xl:max-w-72 m-auto'>{char}</td>
+										<td className='py-1 pl-3 pr-4 overflow-hidden text-nowrap text-ellipsis max-w-44 xl:max-w-72 m-auto'>{char}</td>
 										{Array.from(blueLoot).map(([_, blueLootCount]) => (
 											<td className='font-mono text-center'>{blueLootCount}</td>
 										))}

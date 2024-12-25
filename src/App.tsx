@@ -154,7 +154,7 @@ export class App extends React.Component {
 
 	render(): React.ReactNode {
 		return (
-			<div className={"h-full w-full" + (this.isDarkTheme() ? " dark" : "")}>
+			<div className={"h-[100vh] w-full" + (this.isDarkTheme() ? " dark" : "")}>
 				<div className="p-3 h-full w-full bg-white dark:bg-zinc-700">
 					<AnomaliesTable
 						tableColumns={this.state.tableState.tableColumns}
