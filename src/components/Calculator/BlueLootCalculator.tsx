@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import BlueLootDefinitons from "../../../definitions/BlueLootDefinitons";
+import BlueLootDefinitons from "../../definitions/BlueLootDefinitons";
 import BigNumber from "bignumber.js";
 
 type BlueLoot = Map<string, number>;

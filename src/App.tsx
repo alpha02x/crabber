@@ -1,9 +1,9 @@
 import React from "react";
-import AnomaliesTable from "./components/AnomaliesTable/AnomaliesTable";
-import { DarkModeButton } from "./components/DarkModeButton/DarkModeButton";
+import AnomaliesTable from "./components/AnomaliesTable";
+import { DarkModeButton } from "./components/DarkModeButton";
 import TableColumn from "./models/TableColumn";
 import AnomalyDefinitons from "./definitions/AnomalyDefinitons";
-import { Calculator } from "./components/Calculator/Calculator";
+import { Calculator } from "./components/Calculator";
 
 type AppState = {
 	darkTheme: boolean;

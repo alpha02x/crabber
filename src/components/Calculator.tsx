@@ -1,8 +1,8 @@
 import React from "react";
-import TableColumn from "../../models/TableColumn";
-import AnomalyDefinitons from "../../definitions/AnomalyDefinitons";
-import { BlueLootCalculator } from "./BlueLootCalculator/BlueLootCalculator";
-import { CalculatorCharName } from "./CalculatorCharName/CalculatorCharName";
+import TableColumn from "../models/TableColumn";
+import AnomalyDefinitons from "../definitions/AnomalyDefinitons";
+import { BlueLootCalculator } from "./Calculator/BlueLootCalculator";
+import { CalculatorCharName } from "./Calculator/CalculatorCharName";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];

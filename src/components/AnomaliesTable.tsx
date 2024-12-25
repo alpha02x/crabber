@@ -1,11 +1,11 @@
 import React from "react";
-import { AnomalyCheckBox } from "./AnomalyCheckBox/AnomalyCheckBox";
-import { CharAdditionControl } from "./CharAdditionControl/CharAdditionControl";
-import { AnomalyAdditionControl } from "./AnomalyAdditionControl/AnomalyAdditionControl";
-import TableColumn from "../../models/TableColumn";
-import { ColumnHeading } from "./ColumnHeading/ColumnHeading";
-import { CharName } from "./CharName/CharName";
-import ResetButton from "./ResetButton/ResetButton";
+import { AnomalyCheckBox } from "./AnomaliesTable/AnomalyCheckBox";
+import { CharAdditionControl } from "./AnomaliesTable/CharAdditionControl";
+import { AnomalyAdditionControl } from "./AnomaliesTable/AnomalyAdditionControl";
+import TableColumn from "../models/TableColumn";
+import { ColumnHeading } from "./AnomaliesTable/ColumnHeading/ColumnHeading";
+import { CharName } from "./AnomaliesTable/CharName";
+import ResetButton from "./AnomaliesTable/ResetButton";
 
 type AnomaliesTableProps = {
 	tableColumns: TableColumn[];

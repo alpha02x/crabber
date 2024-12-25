@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import AnomalyDefinitons, { Blocks } from "../../../definitions/AnomalyDefinitons";
+import AnomalyDefinitons, { Blocks } from "../../definitions/AnomalyDefinitons";
 
 type AnomalyAdditionControlProps = {
 	addAnomaly: (type: string) => void;

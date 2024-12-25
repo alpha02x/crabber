@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonImg from "../../assets/dark-mode-button.png";
+import ButtonImg from "../assets/dark-mode-button.png";
 
 type DarkModeButtonProps = {
 	darkTheme: boolean;
