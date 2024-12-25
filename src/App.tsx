@@ -93,13 +93,13 @@ export class App extends React.Component {
 	}
 
 	setCharStatusForAnomaly(char: string, anomalyName: string, passed: boolean) {
-		let newState = this.state.tableState;
+		let newState = { ...this.state.tableState };
 		let column = newState.tableColumns.find((x) => x.name === anomalyName);
 		if (column == null) return;
 
 		if (passed) {
 			if (column.charsPassed.includes(char) === false) {
-				column.charsPassed.push(char);
+				column.charsPassed = column.charsPassed.concat(char);
 			}
 		} else {
 			if (column.charsPassed.includes(char) === true) {
@@ -145,7 +145,7 @@ export class App extends React.Component {
 		this.setTableState(newTableState);
 	}
 
-	setPrecheck(charName: string) {
+	setPrecheck(charName: string, anomalyName: string, passed: boolean) {
 		let newPrechecked = this.state.tableState.precheckedChars.includes(charName) ?
 			this.state.tableState.precheckedChars.filter((c) => c !== charName) :
 			this.state.tableState.precheckedChars.concat(charName);

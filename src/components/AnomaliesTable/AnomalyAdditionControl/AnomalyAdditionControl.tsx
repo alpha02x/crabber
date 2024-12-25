@@ -14,7 +14,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 	render(): React.ReactNode {
 		return (
 			<select
-				className='w-10 m-auto rounded-lg font-normal'
+				className='w-10 m-auto rounded-lg font-normal my-2'
 				id='choice'
 				onChange={this.onChange.bind(this)}
 			>

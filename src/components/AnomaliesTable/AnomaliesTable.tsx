@@ -17,7 +17,7 @@ type AnomaliesTableProps = {
 	addAnomaly: (type: string) => void;
 	removeCharFromTable: (charName: string) => void;
 	setCharStatusForAnomaly: (charName: string, anomalyName: string, passed: boolean) => void;
-	setPrecheck: (charName: string) => void;
+	setPrecheck: (charName: string, anomalyName: string, passed: boolean) => void;
 	addChar: (char: string) => void;
 	resetState: () => void;
 };

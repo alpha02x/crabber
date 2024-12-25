@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 
 type AnomaliesTableProps = {
 	char: string;
@@ -8,11 +8,6 @@ type AnomaliesTableProps = {
 };
 
 export class AnomalyCheckBox extends React.Component<AnomaliesTableProps> {
-	handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
-		let newValue: boolean = event.target.checked;
-		this.props.setCharStatusForAnomaly(this.props.char, this.props.anomalyName, newValue);
-	};
-
 	render() {
 		return (
 			<div
