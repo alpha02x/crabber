@@ -1,14 +1,14 @@
 import React from "react";
-
-type ResetButtonProps = {
-	resetState: () => void;
-};
+import { AppStateManagementContext } from "../../AppStateManagementContext";
 
 type ResetButtonState = {
 	showToolTip: boolean;
 };
 
-export class ResetButton extends React.Component<ResetButtonProps, ResetButtonState> {
+export class ResetButton extends React.Component<{}, ResetButtonState> {
+	static contextType = AppStateManagementContext;
+	declare context: React.ContextType<typeof AppStateManagementContext>
+
 	state: Readonly<ResetButtonState> = { showToolTip: false };
 
 	render(): React.ReactNode {
@@ -18,7 +18,7 @@ export class ResetButton extends React.Component<ResetButtonProps, ResetButtonSt
 					className='p-0.5 px-2 w-fit rounded-lg shadow-md hover:shadow-lg cursor-pointer select-none bg-eastern-blue-200 dark:bg-eastern-blue-700 dark:text-zinc-200'
 					onDoubleClick={() => {
 						this.setState({ showToolTip: false });
-						return this.props.resetState();
+						return this.context.resetState();
 					}}
 					onClick={() => {
 						this.setState({ showToolTip: true });

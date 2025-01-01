@@ -6,23 +6,18 @@ import TableColumn from "../models/TableColumn";
 import { ColumnHeading } from "./AnomaliesTable/ColumnHeading/ColumnHeading";
 import { CharName } from "./AnomaliesTable/CharName";
 import ResetButton from "./AnomaliesTable/ResetButton";
+import { AppStateManagementContext } from "../AppStateManagementContext";
 
 type AnomaliesTableProps = {
 	tableColumns: TableColumn[];
 	chars: string[];
 	precheckedChars: string[];
-	removeColumn: (columnName: string) => void;
-	changeDrifter: (columnName: string, hasMiniDrifter: boolean, hasBigDrifter: boolean) => void;
-	changeAddRat: (columnName: string) => void;
-	addAnomaly: (type: string) => void;
-	removeCharFromTable: (charName: string) => void;
-	setCharStatusForAnomaly: (charName: string, anomalyName: string, passed: boolean) => void;
-	setPrecheck: (charName: string, anomalyName: string, passed: boolean) => void;
-	addChar: (char: string) => void;
-	resetState: () => void;
 };
 
 export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
+	static contextType = AppStateManagementContext;
+	declare context: React.ContextType<typeof AppStateManagementContext>
+
 	render() {
 		return (
 			[
@@ -34,16 +29,16 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 								{this.props.tableColumns.map((column) => (
 									<th>
 										<ColumnHeading
-											removeColumn={this.props.removeColumn}
-											changeAddRat={this.props.changeAddRat}
-											changeDrifter={this.props.changeDrifter}
+											removeColumn={this.context.removeColumn}
+											changeAddRat={this.context.changeAddRat}
+											changeDrifter={this.context.changeDrifter}
 											tableColumn={column}
 										/>
 									</th>
 								))}
 								<th className="w-full">
 									<span className='px-1 float-start'>
-										<AnomalyAdditionControl addAnomaly={this.props.addAnomaly} />
+										<AnomalyAdditionControl addAnomaly={this.context.addAnomaly} />
 									</span>
 								</th>
 							</tr>
@@ -54,7 +49,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 											"bg-[#f1f1f3] dark:bg-[#4c4c55]" :
 											"bg-[#f9fafb] dark:bg-zinc-600")}>
 										<CharName
-											removeCharFromTable={this.props.removeCharFromTable}
+											removeCharFromTable={this.context.removeCharFromTable}
 											charName={char}
 										/>
 									</td>
@@ -64,7 +59,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 												checked={column.charsPassed.includes(char)}
 												char={char}
 												anomalyName={column.name}
-												setCharStatusForAnomaly={this.props.setCharStatusForAnomaly}
+												setCharStatusForAnomaly={this.context.setCharStatusForAnomaly}
 											/>
 										</td>
 									))}
@@ -74,7 +69,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 												checked={this.props.precheckedChars.includes(char)}
 												char={char}
 												anomalyName="preCheck"
-												setCharStatusForAnomaly={this.props.setPrecheck}
+												setCharStatusForAnomaly={this.context.setPrecheck}
 											></AnomalyCheckBox>
 										</div>
 									</td>
@@ -82,13 +77,13 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 							))}
 							<tr>
 								<td className="sticky left-0">
-									<CharAdditionControl addChar={this.props.addChar} />
+									<CharAdditionControl addChar={this.context.addChar} />
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>,
-				<ResetButton resetState={this.props.resetState} />
+				<ResetButton/>
 			]
 		);
 	}

@@ -12,6 +12,7 @@ export type CalculatorCharNameState = {
 }
 
 export class CalculatorCharName extends React.Component<CalculatorCharNameProps> {
+
 	state: CalculatorCharNameState = {
 		isError: false,
 		lastValue: undefined

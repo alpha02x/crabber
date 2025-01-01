@@ -4,6 +4,7 @@ import { DarkModeButton } from "./components/DarkModeButton";
 import TableColumn from "./models/TableColumn";
 import AnomalyDefinitons from "./definitions/AnomalyDefinitons";
 import { Calculator } from "./components/Calculator";
+import { AppStateManagementContext } from "./AppStateManagementContext";
 
 type AppState = {
 	darkTheme: boolean;
@@ -154,33 +155,38 @@ export class App extends React.Component {
 
 	render(): React.ReactNode {
 		return (
-			<div className={"min-h-screen" + (this.isDarkTheme() ? " dark" : "")}>
-				<div className="p-3 min-h-screen w-full bg-white dark:bg-zinc-700">
-					<AnomaliesTable
-						tableColumns={this.state.tableState.tableColumns}
-						chars={this.state.tableState.chars}
-						precheckedChars={this.state.tableState.precheckedChars}
-						addChar={this.addChar.bind(this)}
-						removeCharFromTable={this.removeChar.bind(this)}
-						addAnomaly={this.addAnomaly.bind(this)}
-						setCharStatusForAnomaly={this.setCharStatusForAnomaly.bind(this)}
-						changeAddRat={this.changeAddRat.bind(this)}
-						changeDrifter={this.changeDrifter.bind(this)}
-						removeColumn={this.removeColumn.bind(this)}
-						resetState={this.resetState.bind(this)}
-						setPrecheck={this.setPrecheck.bind(this)}
-					/>
-					<Calculator
-						tableColumns={this.state.tableState.tableColumns}
-						chars={this.state.tableState.chars}
-					/>
-					<DarkModeButton
-						darkTheme={this.isDarkTheme()}
-						disableDarkTheme={this.disableDarkTheme.bind(this)}
-						enableDarkTheme={this.enableDarkTheme.bind(this)}
-					/>
+			<AppStateManagementContext.Provider value={(
+				{
+					addAnomaly: this.addAnomaly.bind(this),
+					addChar: this.addChar.bind(this),
+					changeAddRat: this.changeAddRat.bind(this),
+					changeDrifter: this.changeDrifter.bind(this),
+					disableDarkTheme: this.disableDarkTheme.bind(this),
+					enableDarkTheme: this.enableDarkTheme.bind(this),
+					removeCharFromTable: this.removeChar.bind(this),
+					removeColumn: this.removeColumn.bind(this),
+					resetState: this.resetState.bind(this),
+					setPrecheck: this.setPrecheck.bind(this),
+					setCharStatusForAnomaly: this.setCharStatusForAnomaly.bind(this)
+				}
+			)}>
+				<div className={"min-h-screen" + (this.isDarkTheme() ? " dark" : "")}>
+					<div className="p-3 min-h-screen w-full bg-white dark:bg-zinc-700">
+						<AnomaliesTable
+							tableColumns={this.state.tableState.tableColumns}
+							chars={this.state.tableState.chars}
+							precheckedChars={this.state.tableState.precheckedChars}
+						/>
+						<Calculator
+							tableColumns={this.state.tableState.tableColumns}
+							chars={this.state.tableState.chars}
+						/>
+						<DarkModeButton
+							darkTheme={this.isDarkTheme()}
+						/>
+					</div>
 				</div>
-			</div>
+			</AppStateManagementContext.Provider>
 		);
 	}
 
