@@ -12,6 +12,9 @@ export default defineConfig({
     open: true,
     port: 3000,
     host: "127.0.0.1",
+    watch: {
+      usePolling: true,
+    },
   },
   css: {
     postcss: {

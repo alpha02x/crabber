@@ -24,7 +24,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "WATCHPACK_POLLING=true vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
