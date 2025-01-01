@@ -27,7 +27,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 				</option>
 
 				{Blocks.map((block) => {
-					let options: React.JSX.Element[] = [];
+					let options: JSX.Element[] = [];
 					options.push(
 						<option
 							value='none'
