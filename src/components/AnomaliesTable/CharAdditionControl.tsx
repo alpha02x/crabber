@@ -42,9 +42,9 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					onClick={() => this.addNewChar(this.state.charName)}>
 					<polygon points="5 3 19 12 5 21 5 3" />
 				</svg>

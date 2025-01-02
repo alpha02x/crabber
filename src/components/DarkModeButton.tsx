@@ -1,13 +1,15 @@
 import React from "react";
 import ButtonImg from "../assets/dark-mode-button.png";
+import { AppStateManagementContext } from "../AppStateManagementContext";
 
 type DarkModeButtonProps = {
 	darkTheme: boolean;
-	enableDarkTheme: () => void;
-	disableDarkTheme: () => void;
 };
 
 export class DarkModeButton extends React.Component<DarkModeButtonProps> {
+	static readonly contextType = AppStateManagementContext;
+	declare context: React.ContextType<typeof AppStateManagementContext>
+
 	render(): React.ReactNode {
 		return (
 			<img
@@ -16,9 +18,9 @@ export class DarkModeButton extends React.Component<DarkModeButtonProps> {
 				src={ButtonImg}
 				onClick={() => {
 					if (this.props.darkTheme) {
-						this.props.disableDarkTheme();
+						this.context.disableDarkTheme();
 					} else {
-						this.props.enableDarkTheme();
+						this.context.enableDarkTheme();
 					}
 				}}
 			></img>

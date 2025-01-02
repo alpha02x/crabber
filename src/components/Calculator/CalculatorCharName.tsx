@@ -12,6 +12,7 @@ export type CalculatorCharNameState = {
 }
 
 export class CalculatorCharName extends React.Component<CalculatorCharNameProps> {
+
 	state: CalculatorCharNameState = {
 		isError: false,
 		lastValue: undefined
@@ -37,10 +38,7 @@ export class CalculatorCharName extends React.Component<CalculatorCharNameProps>
 				)
 				.toNumber();
 			let coeffToDisplay =
-				(input.at(-1) === '.' || input.endsWith(".0") || input.endsWith(".00"))
-					? input :
-					(parsedPercentage > 100
-						? 100 : parsedPercentage);
+				(input.at(-1) === '.' || input.endsWith(".0") || input.endsWith(".00")) ? input : Math.min(parsedPercentage, 100);
 			// : 1 - (parsedPercentage > 100 ? 100 : parsedPercentage) / 100;
 			this.setState({ isError: false, lastValue: coeffToDisplay });
 			this.props.changeCoefficient(this.props.char[0], coefficient);
