@@ -5,6 +5,7 @@ import TableColumn from "./models/TableColumn";
 import AnomalyDefinitons from "./definitions/AnomalyDefinitons";
 import { Calculator } from "./components/Calculator";
 import { AppStateManagementContext } from "./AppStateManagementContext";
+import ResetButton from "./components/ResetButton";
 
 type AppState = {
 	darkTheme: boolean;
@@ -171,19 +172,22 @@ export class App extends React.Component {
 				}
 			)}>
 				<div className={"min-h-screen" + (this.isDarkTheme() ? " dark" : "")}>
-					<div className="p-3 min-h-screen w-full bg-white dark:bg-zinc-700">
-						<AnomaliesTable
-							tableColumns={this.state.tableState.tableColumns}
-							chars={this.state.tableState.chars}
-							precheckedChars={this.state.tableState.precheckedChars}
-						/>
-						<Calculator
-							tableColumns={this.state.tableState.tableColumns}
-							chars={this.state.tableState.chars}
-						/>
-						<DarkModeButton
-							darkTheme={this.isDarkTheme()}
-						/>
+					<div className="w-full min-h-screen bg-white dark:bg-zinc-700">
+						<div className="grid grid-cols-1 lg:grid-cols-[auto_auto] grid-rows-[repeat(auto,_4)] lg:grid-rows-[repeat(auto,_3)] gap-y-4 gap-x-6 p-2 pb-8 lg:pt-5 max-w-[1920px] lg:min-w-[700px] lg:w-fit mx-auto">
+							<AnomaliesTable
+								tableColumns={this.state.tableState.tableColumns}
+								chars={this.state.tableState.chars}
+								precheckedChars={this.state.tableState.precheckedChars}
+							/>
+							<ResetButton />
+							<Calculator
+								tableColumns={this.state.tableState.tableColumns}
+								chars={this.state.tableState.chars}
+							/>
+							<DarkModeButton
+								darkTheme={this.isDarkTheme()}
+							/>
+						</div>
 					</div>
 				</div>
 			</AppStateManagementContext.Provider>

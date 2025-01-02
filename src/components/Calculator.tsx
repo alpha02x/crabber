@@ -63,11 +63,11 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 		]);
 
 		return (
-			<div className='flex flex-col flex-nowrap overflow-auto mb-7 mt-5 ml-2 mr-3 py-2 sm:ml-5 sm:mr-6 2xl:ml-72 2xl:mr-72 shadow-lg rounded-xl bg-[#f9fafb] dark:bg-zinc-600'>
-				<div className='w-fit m-3 py-1 shadow-sm bg-zinc-100 dark:bg-zinc-500 rounded-xl'>
+			[
+				<div className='overflow-x-auto max-w-fit h-fit lg:col-start-2 py-1 shadow-lg bg-[#f9fafb] dark:bg-zinc-600 rounded-xl'>
 					<table>
 						{charsToIncomeMap.map(([char, income]) => (
-							<tr className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#52525b]/40 bg-zinc-200/50" : ""}>
+							<tr className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
 								<td className='pt-1 pl-2 max-w-52'>
 									<CalculatorCharName
 										changeCoefficient={this.changeCoefficient.bind(this)}
@@ -98,12 +98,12 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 							</td>
 						</tr>
 					</table>
-				</div>
+				</div>,
 				<BlueLootCalculator
 					totalFarmedMoney={this.getAllCharsSum()}
 					charsToIncomeMap={new Map(charsToIncomeMap)}
 				/>
-			</div>
+			]
 		);
 	}
 }
