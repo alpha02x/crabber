@@ -75,7 +75,7 @@ export class App extends React.Component {
 	}
 
 	setTableState(tableState: TableState) {
-		this.setState({ ...this.state, tableState: tableState });
+		this.setState(prev => ({ ...prev, tableState: tableState }));
 		localStorage.setItem("state", JSON.stringify(tableState));
 	}
 
@@ -103,10 +103,9 @@ export class App extends React.Component {
 			if (column.charsPassed.includes(char) === false) {
 				column.charsPassed = column.charsPassed.concat(char);
 			}
-		} else {
-			if (column.charsPassed.includes(char) === true) {
-				column.charsPassed = column.charsPassed.filter((x: string) => x !== char);
-			}
+		}
+		else if (column.charsPassed.includes(char) === true) {
+			column.charsPassed = column.charsPassed.filter((x: string) => x !== char);
 		}
 
 		this.setTableState(newState);
@@ -154,23 +153,23 @@ export class App extends React.Component {
 		this.setTableState({ ...this.state.tableState, precheckedChars: newPrechecked });
 	}
 
+	stateManagementMethods = {
+		addAnomaly: this.addAnomaly.bind(this),
+		addChar: this.addChar.bind(this),
+		changeAddRat: this.changeAddRat.bind(this),
+		changeDrifter: this.changeDrifter.bind(this),
+		disableDarkTheme: this.disableDarkTheme.bind(this),
+		enableDarkTheme: this.enableDarkTheme.bind(this),
+		removeCharFromTable: this.removeChar.bind(this),
+		removeColumn: this.removeColumn.bind(this),
+		resetState: this.resetState.bind(this),
+		setPrecheck: this.setPrecheck.bind(this),
+		setCharStatusForAnomaly: this.setCharStatusForAnomaly.bind(this)
+	};
+
 	render(): React.ReactNode {
 		return (
-			<AppStateManagementContext.Provider value={(
-				{
-					addAnomaly: this.addAnomaly.bind(this),
-					addChar: this.addChar.bind(this),
-					changeAddRat: this.changeAddRat.bind(this),
-					changeDrifter: this.changeDrifter.bind(this),
-					disableDarkTheme: this.disableDarkTheme.bind(this),
-					enableDarkTheme: this.enableDarkTheme.bind(this),
-					removeCharFromTable: this.removeChar.bind(this),
-					removeColumn: this.removeColumn.bind(this),
-					resetState: this.resetState.bind(this),
-					setPrecheck: this.setPrecheck.bind(this),
-					setCharStatusForAnomaly: this.setCharStatusForAnomaly.bind(this)
-				}
-			)}>
+			<AppStateManagementContext.Provider value={this.stateManagementMethods}>
 				<div className={"min-h-screen" + (this.isDarkTheme() ? " dark" : "")}>
 					<div className="w-full min-h-screen bg-white dark:bg-zinc-700">
 						<div className="grid grid-cols-1 lg:grid-cols-[auto_auto] grid-rows-[repeat(auto,_4)] lg:grid-rows-[repeat(auto,_3)] gap-y-4 gap-x-6 p-2 pb-8 lg:pt-5 max-w-[1920px] lg:min-w-[700px] lg:w-fit mx-auto">

@@ -40,6 +40,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 						.filter((anom) => AnomalyDefinitons.get(anom)?.block === block.text)
 						.map((anom) => (
 							<option
+								key={anom}
 								style={{ backgroundColor: block.color ?? "white" }}
 								value={anom}
 							>

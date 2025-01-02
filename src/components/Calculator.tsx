@@ -64,42 +64,47 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 
 		return (
 			[
-				<div className='overflow-x-auto max-w-fit h-fit lg:col-start-2 py-1 shadow-lg bg-[#f9fafb] dark:bg-zinc-600 rounded-xl'>
+				<div
+					key={"calc-table"}
+					className='overflow-x-auto max-w-fit h-fit lg:col-start-2 py-1 shadow-lg bg-[#f9fafb] dark:bg-zinc-600 rounded-xl'>
 					<table>
-						{charsToIncomeMap.map(([char, income]) => (
-							<tr className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
-								<td className='pt-1 pl-2 max-w-52'>
-									<CalculatorCharName
-										changeCoefficient={this.changeCoefficient.bind(this)}
-										char={[char, this.state.charsCoefficients.get(char) ?? 1]}
-									/>
-								</td>
-								<td className="pl-7 font-mono text-right dark:text-zinc-200">
-									{income.toLocaleString("ru-RU", {
+						<tbody>
+							{charsToIncomeMap.map(([char, income]) => (
+								<tr key={char} className={this.props.chars.indexOf(char) % 2 === 1 ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
+									<td className='pt-1 pl-2 max-w-52'>
+										<CalculatorCharName
+											changeCoefficient={this.changeCoefficient.bind(this)}
+											char={[char, this.state.charsCoefficients.get(char) ?? 1]}
+										/>
+									</td>
+									<td className="pl-7 font-mono text-right dark:text-zinc-200">
+										{income.toLocaleString("ru-RU", {
+											minimumFractionDigits: 0,
+											maximumFractionDigits: 0,
+										})}
+									</td>
+									<td className="pl-2 pr-3 font-mono dark:text-zinc-200">
+										ISK
+									</td>
+								</tr>
+							))}
+							<tr key={"sum-key"}>
+								<td className="pt-1 pr-1 pl-3 text-right dark:text-zinc-200">Итого:</td>
+								<td className="pt-2 pl-7 text-right font-mono dark:text-zinc-200">
+									{this.getAllColumnsSum().toLocaleString("ru-RU", {
 										minimumFractionDigits: 0,
 										maximumFractionDigits: 0,
 									})}
 								</td>
-								<td className="pl-2 pr-3 font-mono dark:text-zinc-200">
+								<td className="pt-2 pl-2 pr-4 font-mono dark:text-zinc-200">
 									ISK
 								</td>
 							</tr>
-						))}
-						<tr>
-							<td className="pt-1 pr-1 pl-3 text-right dark:text-zinc-200">Итого:</td>
-							<td className="pt-2 pl-7 text-right font-mono dark:text-zinc-200">
-								{this.getAllColumnsSum().toLocaleString("ru-RU", {
-									minimumFractionDigits: 0,
-									maximumFractionDigits: 0,
-								})}
-							</td>
-							<td className="pt-2 pl-2 pr-4 font-mono dark:text-zinc-200">
-								ISK
-							</td>
-						</tr>
+						</tbody>
 					</table>
 				</div>,
 				<BlueLootCalculator
+					key={"bl-calc"}
 					totalFarmedMoney={this.getAllCharsSum()}
 					charsToIncomeMap={new Map(charsToIncomeMap)}
 				/>

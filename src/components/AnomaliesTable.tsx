@@ -14,7 +14,7 @@ type AnomaliesTableProps = {
 };
 
 export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
-	static contextType = AppStateManagementContext;
+	static readonly contextType = AppStateManagementContext;
 	declare context: React.ContextType<typeof AppStateManagementContext>
 
 	render() {
@@ -25,7 +25,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 						<tr className="bg-zinc-200 dark:bg-zinc-500">
 							<th className="sticky left-0 z-10 pl-3 align-middle text-left font-normal dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-500">Окно</th>
 							{this.props.tableColumns.map((column) => (
-								<th>
+								<th key={column.name}>
 									<ColumnHeading
 										removeColumn={this.context.removeColumn}
 										changeAddRat={this.context.changeAddRat}
@@ -52,7 +52,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 									/>
 								</td>
 								{this.props.tableColumns.map((column) => (
-									<td>
+									<td key={column.name}>
 										<AnomalyCheckBox
 											checked={column.charsPassed.includes(char)}
 											char={char}

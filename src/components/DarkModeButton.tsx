@@ -7,7 +7,7 @@ type DarkModeButtonProps = {
 };
 
 export class DarkModeButton extends React.Component<DarkModeButtonProps> {
-	static contextType = AppStateManagementContext;
+	static readonly contextType = AppStateManagementContext;
 	declare context: React.ContextType<typeof AppStateManagementContext>
 
 	render(): React.ReactNode {

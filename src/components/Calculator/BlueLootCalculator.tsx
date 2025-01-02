@@ -115,18 +115,18 @@ export class BlueLootCalculator extends React.Component<BlueLootCalculatorProps,
 								<tr className='px-3 bg-zinc-200 dark:bg-zinc-400'>
 									<th className="px-3 font-normal text-left">Окно</th>
 									{Array.from(BlueLootDefinitons.keys()).map((blueLootName) => (
-										<th className='font-semibold text-[12px] max-w-24 px-2 py-0.5 uppercase'>{blueLootName}</th>
+										<th key={"bl-header"} className='font-semibold text-[12px] max-w-24 px-2 py-0.5 uppercase'>{blueLootName}</th>
 									))}
 									<th className="px-3 text-right font-normal text-nowrap">Цена синьки</th>
 								</tr>
 								{Array.from(this.calculateBlueLootDistribution(this.state.cargoContents).entries()).map(
 									([char, blueLoot]) => (
-										<tr className={(Array.from(this.props.charsToIncomeMap.keys()).indexOf(char) % 2 === 1) ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
+										<tr key={char} className={(Array.from(this.props.charsToIncomeMap.keys()).indexOf(char) % 2 === 1) ? "dark:bg-[#4c4c55] bg-[#f1f1f3]" : ""}>
 											<td className='py-1 pl-3 pr-4 overflow-hidden text-nowrap text-ellipsis max-w-44 xl:max-w-72 m-auto'>{char}</td>
-											{Array.from(blueLoot).map(([_, blueLootCount]) => (
-												<td className='font-mono text-center'>{blueLootCount}</td>
+											{Array.from(blueLoot).map(([blueLootName, blueLootCount]) => (
+												<td key={`${char}|${blueLootName}`} className='font-mono text-center'>{blueLootCount}</td>
 											))}
-											<td className="pr-3 pl-3 text-nowrap text-right font-mono">
+											<td className={"pr-3 pl-3 text-nowrap text-right font-mono" + (!isEnoughCargo ? " text-[#c4000d] dark:text-[#f9b2b3]" : "")}>
 												&nbsp;
 												{Array.from(blueLoot)
 													.reduce(

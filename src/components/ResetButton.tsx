@@ -6,7 +6,7 @@ type ResetButtonState = {
 };
 
 export class ResetButton extends React.Component<{}, ResetButtonState> {
-	static contextType = AppStateManagementContext;
+	static readonly contextType = AppStateManagementContext;
 	declare context: React.ContextType<typeof AppStateManagementContext>
 
 	state: Readonly<ResetButtonState> = { showToolTip: false };
