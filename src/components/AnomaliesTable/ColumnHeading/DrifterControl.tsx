@@ -1,5 +1,6 @@
 import React from "react";
 import TableColumn from "../../../models/TableColumn";
+import { Translation } from "react-i18next";
 
 export type DrifterControlProps = {
 	column: TableColumn;
@@ -15,26 +16,28 @@ enum DrifterState {
 export class DrifterControl extends React.Component<DrifterControlProps> {
 	render(): React.ReactNode {
 		return (
-			<button
-				title={this.renderTitle()}
-				className={(this.props.column.drifterKilled || this.props.column.miniDrifterKilled ? "text-zinc-800 dark:text-eastern-blue-300" : "text-zinc-500 dark:text-zinc-300 hover:text-xs hover:scale-90") +
-					' inline-block h-4 w-4 font-bold text-sm text-center mx-auto select-none cursor-pointer'}
-				onClick={() => this.cycleDrifter()}>
-				{this.renderDrifter()}
-			</button>
+			<Translation>{t =>
+				<button
+					title={t(this.renderTitle())}
+					className={(this.props.column.drifterKilled || this.props.column.miniDrifterKilled ? "text-zinc-800 dark:text-eastern-blue-300" : "text-zinc-500 dark:text-zinc-300 hover:text-xs hover:scale-90") +
+						' inline-block h-4 w-4 font-bold text-sm text-center mx-auto select-none cursor-pointer'}
+					onClick={() => this.cycleDrifter()}>
+					{this.renderDrifter()}
+				</button>
+			}</Translation>
 		)
 	}
 
-	renderTitle(): string | undefined {
+	renderTitle(): string {
 		switch (this.getCurrentDrifterState()) {
 			case DrifterState.None:
-				return "Дрифтер: не убит";
+				return "drifter_not_killed";
 			case DrifterState.MiniDrifter:
-				return "Дрифтер: убит минидрифтер";
+				return "drifter_mini_drifter";
 			case DrifterState.BigDrifter:
-				return "Дрифтер: убит большой дрифтер";
+				return "drifter_big_drifter";
 			default:
-				break;
+				return "error";
 		}
 	}
 

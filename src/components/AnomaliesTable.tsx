@@ -6,6 +6,7 @@ import TableColumn from "../models/TableColumn";
 import { ColumnHeading } from "./AnomaliesTable/ColumnHeading/ColumnHeading";
 import { CharName } from "./AnomaliesTable/CharName";
 import { AppStateManagementContext } from "../AppStateManagementContext";
+import { Translation } from "react-i18next";
 
 type AnomaliesTableProps = {
 	tableColumns: TableColumn[];
@@ -23,7 +24,9 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 				<table className="pt-2 mb-2 px-3 w-full">
 					<tbody>
 						<tr className="bg-zinc-200 dark:bg-zinc-500">
-							<th className="sticky left-0 z-10 pl-3 align-middle text-left font-normal dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-500">Окно</th>
+							<th className="sticky left-0 z-10 pl-3 align-middle text-left font-normal dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-500">
+								<Translation>{(t) => t("toon")}</Translation>
+							</th>
 							{this.props.tableColumns.map((column) => (
 								<th key={column.name}>
 									<ColumnHeading

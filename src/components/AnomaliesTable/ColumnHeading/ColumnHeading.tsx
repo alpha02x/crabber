@@ -5,6 +5,7 @@ import { DrifterControl } from "./DrifterControl";
 import { AdditionalRatControl } from "./AdditionalRatControl";
 import RelicImg from "../../../assets/relic_Site_16.png"
 import DataImg from "../../../assets/data_Site_16.png"
+import { Translation } from "react-i18next";
 
 export type ColumnHeadingProps = {
 	tableColumn: TableColumn;
@@ -17,30 +18,32 @@ export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 	render(): React.ReactNode {
 		let anomalyDef = AnomalyDefinitons.get(this.props.tableColumn.anomalyType)!;
 		return (
-			<div className='mt-2 m-0.5 px-0.5 min-w-14'>
-				<div className="select-none">
-					<div className="m-auto w-max text-center">
-						{this.renderTrashButton()}
+			<Translation>{t =>
+				<div className='mt-2 m-0.5 px-0.5 min-w-14'>
+					<div className="select-none">
+						<div className="m-auto w-max text-center">
+							{this.renderTrashButton()}
+						</div>
+						<div className="text-nowrap" title={t(anomalyDef.name, anomalyDef.name) ?? ""}>
+							{this.renderWhClass(anomalyDef)}
+							{this.renderAnomImage(anomalyDef)}
+							<span className="pl-0.5 text-xs font-bold dark:text-zinc-200">{anomalyDef.short}</span>
+							<span className="pl-0.5 text-xs font-bold font-mono dark:text-zinc-200">
+								{this.props.tableColumn.name.split('-').at(-1)}
+							</span>
+							<div />
+						</div>
 					</div>
-					<div className="text-nowrap" title={anomalyDef.name ?? ""}>
-						{this.renderWhClass(anomalyDef)}
-						{this.renderAnomImage(anomalyDef)}
-						<span className="pl-0.5 text-xs font-bold dark:text-zinc-200">{anomalyDef.short}</span>
-						<span className="pl-0.5 text-xs font-bold font-mono dark:text-zinc-200">
-							{this.props.tableColumn.name.split('-').at(-1)}
-						</span>
-						<div />
-					</div>
+
+					{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasAdditionalRats && (
+						<AdditionalRatControl changeAddRat={this.props.changeAddRat} column={this.props.tableColumn} />
+					)}
+
+					{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasDrifter && (
+						<DrifterControl changeDrifter={this.props.changeDrifter} column={this.props.tableColumn} />
+					)}
 				</div>
-
-				{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasAdditionalRats && (
-					<AdditionalRatControl changeAddRat={this.props.changeAddRat} column={this.props.tableColumn} />
-				)}
-
-				{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasDrifter && (
-					<DrifterControl changeDrifter={this.props.changeDrifter} column={this.props.tableColumn} />
-				)}
-			</div>
+			}</Translation>
 		);
 	}
 
