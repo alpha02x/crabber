@@ -60,7 +60,7 @@ export const Blocks: Block[] = [
 	{ text: "C3 Relic", color: "#faf4ed" },
 	{ text: "C4", color: "#e8ffee" },
 	{ text: "C6", color: "#edfafa" },
-	{ text: "Другое", color: "white" },
+	{ text: "other", color: "white" },
 ];
 
 const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
@@ -259,10 +259,10 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 	[
 		"Drifter",
 		{
-			name: "Дрифтер",
+			name: "drifter",
 			short: "D",
 			tag: "D-",
-			block: "Другое",
+			block: "other",
 			whClass: WhClass.Unclassified,
 			data: false,
 			relic: false,
@@ -275,10 +275,10 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 	[
 		"Drifter-Recon",
 		{
-			name: "Минидрифтер",
+			name: "minidrifter",
 			short: "RD",
 			tag: "MD-",
-			block: "Другое",
+			block: "other",
 			whClass: WhClass.Unclassified,
 			data: false,
 			relic: false,
@@ -291,10 +291,10 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 	[
 		"5CEW",
 		{
-			name: "Капдоресп C5",
+			name: "upg_c5",
 			short: "Upg",
 			tag: "5CEW-",
-			block: "Другое",
+			block: "other",
 			whClass: WhClass.C5,
 			data: false,
 			relic: false,
@@ -307,10 +307,10 @@ const AnomalyDefinitons: Map<string, AnomalyDefinition> = new Map([
 	[
 		"6CEW",
 		{
-			name: "Капдоресп C6",
+			name: "upg_c6",
 			short: "Upg",
 			tag: "6CEW-",
-			block: "Другое",
+			block: "other",
 			whClass: WhClass.C6,
 			data: false,
 			relic: false,

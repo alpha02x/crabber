@@ -1,0 +1,26 @@
+{
+  "translation": {
+    "toon": "Toon",
+    "reset": "Reset",
+    "reset_tooltip": "Double-click to reset",
+    "cargo_placeholder": "Paste cargo here",
+    "enough_blue_loot_in_cargo": "Enough blue loot in cargo for distribution",
+    "not_enough_blue_loot_in_cargo": "Not enough blue loot worth {{missing_isk}} ISK",
+    "blue_loot_price": "Blue loot price",
+    "dark_theme": "Dark theme",
+    "cargo": "Cargo",
+    "char_addition_input_placeholder": "Enter character name",
+    "total": "Total",
+    "drifter_not_killed": "Drifter: not killed",
+    "drifter_mini_drifter": "Drifter: mini drifter killed",
+    "drifter_big_drifter": "Drifter: big drifter killed",
+    "error": "!! Error !!",
+    "add_killed": "Additional NPC: killed",
+    "add_not_killed": "Additional NPC: not killed",
+    "other": "Other",
+    "drifter": "Drifter",
+    "minidrifter": "Mini drifter",
+    "upg_c5": "Upgraded avengers C5",
+    "upg_c6": "Upgraded avengers C6"
+  }
+}

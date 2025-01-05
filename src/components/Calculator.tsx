@@ -3,6 +3,7 @@ import TableColumn from "../models/TableColumn";
 import AnomalyDefinitons from "../definitions/AnomalyDefinitons";
 import { BlueLootCalculator } from "./Calculator/BlueLootCalculator";
 import { CalculatorCharName } from "./Calculator/CalculatorCharName";
+import { Translation } from "react-i18next";
 
 export type CalculatorProps = {
 	tableColumns: TableColumn[];
@@ -89,7 +90,9 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 								</tr>
 							))}
 							<tr key={"sum-key"}>
-								<td className="pt-1 pr-1 pl-3 text-right dark:text-zinc-200">Итого:</td>
+								<td className="pt-1 pr-1 pl-3 text-right dark:text-zinc-200">
+									<Translation>{t => t("total")}</Translation>:
+								</td>
 								<td className="pt-2 pl-7 text-right font-mono dark:text-zinc-200">
 									{this.getAllColumnsSum().toLocaleString("ru-RU", {
 										minimumFractionDigits: 0,

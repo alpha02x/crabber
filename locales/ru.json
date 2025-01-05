@@ -1,0 +1,26 @@
+{
+  "translation": {
+    "toon": "Окно",
+    "reset": "Сброс",
+    "reset_tooltip": "Двойной клик для сброса",
+    "cargo_placeholder": "Вставь карго сюда",
+    "enough_blue_loot_in_cargo": "В карго достаточно синьки для распределения",
+    "not_enough_blue_loot_in_cargo": "Не хватает синьки на {{missing_isk}} ISK",
+    "blue_loot_price": "Цена синьки",
+    "dark_theme": "Темная тема",
+    "cargo": "Карго",
+    "char_addition_input_placeholder": "Введи имя персонажа",
+    "total": "Итого",
+    "drifter_not_killed": "Дрифтер: не убит",
+    "drifter_mini_drifter": "Дрифтер: убит минидрифтер",
+    "drifter_big_drifter": "Дрифтер: убит большой дрифтер",
+    "error": "!! Ошибка !!",
+    "add_killed": "Дополнительный NPC: убит",
+    "add_not_killed": "Дополнительный NPC: не убит",
+    "other": "Другое",
+    "drifter": "Дрифтер",
+    "minidrifter": "Минидрифтер",
+    "upg_c5": "Капдоресп C5",
+    "upg_c6": "Капдоресп C6"
+  }
+}

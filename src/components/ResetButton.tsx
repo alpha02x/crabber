@@ -1,5 +1,6 @@
 import React from "react";
 import { AppStateManagementContext } from "../AppStateManagementContext";
+import { Translation } from "react-i18next";
 
 type ResetButtonState = {
 	showToolTip: boolean;
@@ -24,9 +25,13 @@ export class ResetButton extends React.Component<{}, ResetButtonState> {
 						this.setState({ showToolTip: true });
 					}}
 				>
-					Сброс
+					<Translation>{(t) => t("reset")}</Translation>
 				</button>
-				{this.state.showToolTip && <div className='ml-3 select-none text-sm pt-1 text-zinc-400 animate-fadein300'>⇐ Двойной клик для сброса</div>}
+				{this.state.showToolTip &&
+					<div
+						className='ml-3 select-none text-sm pt-1 text-zinc-400 animate-fadein300'>
+						⇐ <Translation>{(t) => t("reset_tooltip")}</Translation>
+					</div>}
 			</div>
 		);
 	}

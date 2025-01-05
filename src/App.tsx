@@ -6,6 +6,7 @@ import AnomalyDefinitons from "./definitions/AnomalyDefinitons";
 import { Calculator } from "./components/Calculator";
 import { AppStateManagementContext } from "./AppStateManagementContext";
 import ResetButton from "./components/ResetButton";
+import { LanguageSelector } from "./components/LanguageSelector";
 
 type AppState = {
 	darkTheme: boolean;
@@ -186,6 +187,7 @@ export class App extends React.Component {
 							<DarkModeButton
 								darkTheme={this.isDarkTheme()}
 							/>
+							<LanguageSelector />
 						</div>
 					</div>
 				</div>
