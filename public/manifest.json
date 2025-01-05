@@ -1,6 +1,8 @@
 {
-  "short_name": "Калькулятор синьки",
-  "name": "Калькулятор синьки",
+  "name": "Crabber",
+  "short_name": "Crabber",
+  "description": "Blue loot calculator",
+  "lang": "en",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +20,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "theme_color": "#3f3f46",
+  "background_color": "#3f3f46",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": ".",
+  "orientation": "landscape",
+  "categories": ["games", "utilities"],
+  "features": ["offline"]
 }
