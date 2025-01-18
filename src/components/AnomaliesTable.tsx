@@ -38,9 +38,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 								</th>
 							))}
 							<th className="w-full">
-								<span className='px-1 float-start'>
-									<AnomalyAdditionControl addAnomaly={this.context.addAnomaly} />
-								</span>
+								<AnomalyAdditionControl addAnomaly={this.context.addAnomaly} />
 							</th>
 						</tr>
 						{this.props.chars.map((char) => (
@@ -65,7 +63,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 									</td>
 								))}
 								<td className="opacity-40">
-									<div className="float-start ml-2">
+									<div className="float-start ml-2 mr-7">
 										<AnomalyCheckBox
 											checked={this.props.precheckedChars.includes(char)}
 											char={char}

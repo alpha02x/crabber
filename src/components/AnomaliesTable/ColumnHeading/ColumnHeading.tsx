@@ -57,7 +57,7 @@ export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 	}
 
 	renderWhClass(anomalyDef: AnomalyDefinition): React.ReactNode {
-		let whClass: WhClass = anomalyDef.whClass;
+		let whClass: WhClass | null = anomalyDef.whClasses.length > 1 ? null : anomalyDef.whClasses[0];
 
 		switch (whClass) {
 			case WhClass.C1:
