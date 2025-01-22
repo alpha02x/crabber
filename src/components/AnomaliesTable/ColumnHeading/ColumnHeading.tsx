@@ -6,11 +6,13 @@ import { AdditionalRatControl } from "./AdditionalRatControl";
 import RelicImg from "../../../assets/relic_Site_16.png"
 import DataImg from "../../../assets/data_Site_16.png"
 import { Translation } from "react-i18next";
+import { EscalationControl } from "./EscalationControl";
 
 export type ColumnHeadingProps = {
 	tableColumn: TableColumn;
 	changeDrifter: (columnName: string, hasMiniDrifter: boolean, hasBigDrifter: boolean) => void;
 	changeAddRat: (columnName: string) => void;
+	changeCapWaves: (columnName: string, capWavesKilled: number) => void;
 	removeColumn: (columnName: string) => void;
 };
 
@@ -35,12 +37,16 @@ export class ColumnHeading extends React.Component<ColumnHeadingProps> {
 						</div>
 					</div>
 
-					{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasAdditionalRats && (
+					{anomalyDef.hasAdditionalRats && (
 						<AdditionalRatControl changeAddRat={this.props.changeAddRat} column={this.props.tableColumn} />
 					)}
 
-					{AnomalyDefinitons.get(this.props.tableColumn.anomalyType)?.hasDrifter && (
+					{anomalyDef.hasDrifter && (
 						<DrifterControl changeDrifter={this.props.changeDrifter} column={this.props.tableColumn} />
+					)}
+
+					{((!anomalyDef.notAnom) && (anomalyDef.whClasses.includes(WhClass.C5) || anomalyDef.whClasses.includes(WhClass.C6))) && (
+						<EscalationControl changeCapWaves={this.props.changeCapWaves} column={this.props.tableColumn} />
 					)}
 				</div>
 			}</Translation>

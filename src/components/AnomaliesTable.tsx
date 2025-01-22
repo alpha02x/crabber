@@ -33,6 +33,7 @@ export class AnomaliesTable extends React.Component<AnomaliesTableProps> {
 										removeColumn={this.context.removeColumn}
 										changeAddRat={this.context.changeAddRat}
 										changeDrifter={this.context.changeDrifter}
+										changeCapWaves={this.context.changeCapWaves}
 										tableColumn={column}
 									/>
 								</th>

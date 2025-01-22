@@ -57,7 +57,7 @@ export class DrifterControl extends React.Component<DrifterControlProps> {
 	renderDrifter(): React.ReactNode {
 		switch (this.getCurrentDrifterState()) {
 			case DrifterState.None:
-				return '\u25CB';
+				return 'd';
 			case DrifterState.MiniDrifter:
 				return "M";
 			case DrifterState.BigDrifter:

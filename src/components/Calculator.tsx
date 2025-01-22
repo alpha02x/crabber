@@ -1,6 +1,6 @@
 import React from "react";
 import TableColumn from "../models/TableColumn";
-import AnomalyDefinitons from "../definitions/AnomalyDefinitons";
+import AnomalyDefinitons, { WhClass } from "../definitions/AnomalyDefinitons";
 import { BlueLootCalculator } from "./Calculator/BlueLootCalculator";
 import { CalculatorCharName } from "./Calculator/CalculatorCharName";
 import { Translation } from "react-i18next";
@@ -46,6 +46,10 @@ export class Calculator extends React.Component<CalculatorProps, CalculatorState
 
 		if (column.miniDrifterKilled) result += AnomalyDefinitons.get("Drifter-Recon")!.basePrice;
 		if (column.drifterKilled) result += AnomalyDefinitons.get("Drifter")!.basePrice;
+		if (!definition?.notAnom) {
+			if (definition?.whClasses.includes(WhClass.C5)) result += (AnomalyDefinitons.get("5CEW")!.basePrice) * (column.capWaves ?? 0);
+			if (definition?.whClasses.includes(WhClass.C6)) result += (AnomalyDefinitons.get("6CEW")!.basePrice) * (column.capWaves ?? 0);
+		}
 		return result;
 	}
 

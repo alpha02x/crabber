@@ -92,8 +92,16 @@ export class App extends React.Component {
 		let index = this.state.tableState.tableColumns.findIndex((x) => x.name === columnName);
 		newState.tableColumns[index].miniDrifterKilled = hasMiniDrifter;
 		newState.tableColumns[index].drifterKilled = hasBigDrifter;
+		if (hasBigDrifter && (newState.tableColumns[index].capWaves ?? 0) === 0) newState.tableColumns[index].capWaves = 1;
 		this.setTableState(newState);
 	}
+
+	changeCapWaves(columnName: string, capWavesKilled: number): void {
+		let newState = this.state.tableState;
+		let index = this.state.tableState.tableColumns.findIndex((x) => x.name === columnName);
+		newState.tableColumns[index].capWaves = capWavesKilled;
+		this.setTableState(newState);
+	};
 
 	setCharStatusForAnomaly(char: string, anomalyName: string, passed: boolean) {
 		let newState = { ...this.state.tableState };
@@ -159,6 +167,7 @@ export class App extends React.Component {
 		addChar: this.addChar.bind(this),
 		changeAddRat: this.changeAddRat.bind(this),
 		changeDrifter: this.changeDrifter.bind(this),
+		changeCapWaves: this.changeCapWaves.bind(this),
 		disableDarkTheme: this.disableDarkTheme.bind(this),
 		enableDarkTheme: this.enableDarkTheme.bind(this),
 		removeCharFromTable: this.removeChar.bind(this),

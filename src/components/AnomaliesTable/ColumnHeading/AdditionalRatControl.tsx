@@ -19,7 +19,7 @@ export class AdditionalRatControl extends React.Component<AdditionalRatControlPr
 							"text-zinc-500 dark:text-zinc-300 hover:text-xs hover:scale-90")
 						+ ' inline-block mx-auto h-4 w-4 font-bold text-sm text-center select-none cursor-pointer'}
 					onClick={() => this.props.changeAddRat(this.props.column.name)}>
-					{this.props.column.additionalRatKilled ? "A" : "\u25CB"}
+					{this.props.column.additionalRatKilled ? "A" : "a"}
 				</button>
 			}</Translation>
 		)

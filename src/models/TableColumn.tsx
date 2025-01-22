@@ -5,6 +5,7 @@ export default class TableColumn {
 	drifterKilled: boolean = false;
 	miniDrifterKilled: boolean = false;
 	additionalRatKilled: boolean = false;
+	capWaves: number | null | undefined = 0;
 
 	constructor(name: string, anomalyType: string) {
 		this.name = name;

@@ -5,6 +5,7 @@ export type StateManagementMethods = {
 	addChar: (char: string) => void;
 	changeAddRat: (columnName: string) => void;
 	changeDrifter: (columnName: string, hasMiniDrifter: boolean, hasBigDrifter: boolean) => void;
+	changeCapWaves: (columnName: string, capWavesKilled: number) => void;
 	disableDarkTheme: () => void;
 	enableDarkTheme: () => void;
 	removeCharFromTable: (charName: string) => void;
@@ -22,6 +23,9 @@ export const AppStateManagementContext = createContext<StateManagementMethods>({
 		throw new Error('Function not implemented.');
 	},
 	changeAddRat: function (columnName: string): void {
+		throw new Error('Function not implemented.');
+	},
+	changeCapWaves: function (columnName: string, capWavesKilled: number): void {
 		throw new Error('Function not implemented.');
 	},
 	addAnomaly: function (type: string): void {

@@ -22,6 +22,8 @@
     "minidrifter": "Mini drifter",
     "upg_c5": "Upgraded avengers C5",
     "upg_c6": "Upgraded avengers C6",
-    "anomalies": "Combat Sites"
+    "anomalies": "Combat Sites",
+    "no_cap_waves": "No capital escalations",
+    "cap_waves_killed": "Capital escalation waves killed: {{count}}"
   }
 }
