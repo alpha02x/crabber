@@ -1,19 +1,70 @@
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-		"Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-eastern-blue-50: #f1f9fa;
+  --color-eastern-blue-100: #dceff1;
+  --color-eastern-blue-200: #bee0e3;
+  --color-eastern-blue-300: #91c9cf;
+  --color-eastern-blue-400: #5caab4;
+  --color-eastern-blue-500: #4597a3;
+  --color-eastern-blue-600: #397481;
+  --color-eastern-blue-700: #33606b;
+  --color-eastern-blue-800: #30515a;
+  --color-eastern-blue-900: #2c454d;
+  --color-eastern-blue-950: #192c33;
+
+  --animate-fadein100: fadein 100ms;
+  --animate-fadein300: fadein 300ms;
+  --animate-fadein500: fadein 500ms;
+  --animate-fadein750: fadein 750ms;
+  --animate-fadein1000: fadein 1000ms;
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-#root {
-  min-height: 100vh;
-}
+@layer base {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}

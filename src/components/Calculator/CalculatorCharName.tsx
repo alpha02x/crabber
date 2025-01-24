@@ -48,7 +48,7 @@ export class CalculatorCharName extends React.Component<CalculatorCharNameProps>
 	render(): React.ReactNode {
 		return (
 			<div className='flex flex-row flex-nowrap w-full text-nowrap pr-3'>
-				<div className='flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap overflow-ellipsis m-auto'>{this.props.char[0]}</div>
+				<div className='flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap text-ellipsis m-auto'>{this.props.char[0]}</div>
 				<div className={'inline pl-4 w-14 m-auto float-right text-nowrap font-mono text-sm select-none '
 					+ (this.state.isError ? " text-red-600 dark:text-red-600 " : " dark:text-zinc-200 ")
 					+ (this.props.char[1] === 1 ? " opacity-50" : "")}>

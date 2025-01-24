@@ -29,7 +29,7 @@ export class CharAdditionControl extends React.Component<CharAdditionControlProp
 
 	render(): React.ReactNode {
 		return (
-			<div className='flex flex-row flex-nowrap ml-2 mt-2 mb-1 p-1 sm:w-56 w-44 border-0 rounded-lg whitespace-nowrap shadow-sm bg-zinc-100 dark:bg-zinc-500'>
+			<div className='flex flex-row flex-nowrap ml-2 mt-2 mb-1 p-1 sm:w-56 w-44 border-0 rounded-lg whitespace-nowrap shadow-xs bg-zinc-100 dark:bg-zinc-500'>
 				<Translation>{t =>
 					<input
 						id='char-addition-input'

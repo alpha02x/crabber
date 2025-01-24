@@ -113,7 +113,7 @@ export class AnomalyAdditionControl extends React.Component<AnomalyAdditionContr
 				key={x[0]}
 				popoverTarget="anoms-pop"
 				popoverTargetAction="hide"
-				className="select-none mt-1 mr-3 p-0.5 pl-1 cursor-pointer text-left rounded hover:bg-zinc-400 text-zinc-800 flex-1"
+				className="select-none mt-1 mr-3 p-0.5 pl-1 cursor-pointer text-left rounded-sm hover:bg-zinc-400 text-zinc-800 flex-1"
 				onClick={() => this.props.addAnomaly(x[0])}
 			>
 				{

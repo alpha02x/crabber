@@ -10,7 +10,7 @@ export class CharName extends React.Component<CharNameProps> {
 		return (
 			<div className='flex flex-row flex-nowrap w-full text-nowrap max-w-44 sm:max-w-56'>
 				<div
-					className="flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap overflow-ellipsis m-auto"
+					className="flex-1 w-full dark:text-zinc-200 overflow-hidden text-nowrap text-ellipsis m-auto"
 					title={this.props.charName}>
 					{this.props.charName}
 				</div>

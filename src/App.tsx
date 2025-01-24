@@ -182,7 +182,7 @@ export class App extends React.Component {
 			<AppStateManagementContext.Provider value={this.stateManagementMethods}>
 				<div className={"min-h-screen" + (this.isDarkTheme() ? " dark" : "")}>
 					<div className="w-full min-h-screen bg-white dark:bg-zinc-700">
-						<div className="grid grid-cols-1 lg:grid-cols-[auto_auto] grid-rows-[repeat(auto,_4)] lg:grid-rows-[repeat(auto,_3)] gap-y-4 gap-x-6 p-2 pb-8 lg:pt-5 max-w-[1920px] lg:min-w-[700px] lg:w-fit mx-auto">
+						<div className="grid grid-cols-1 lg:grid-cols-[auto_auto] grid-rows-[repeat(auto,4)] lg:grid-rows-[repeat(auto,3)] gap-y-4 gap-x-6 p-2 pb-8 lg:pt-5 max-w-[1920px] lg:min-w-[700px] lg:w-fit mx-auto">
 							<AnomaliesTable
 								tableColumns={this.state.tableState.tableColumns}
 								chars={this.state.tableState.chars}
